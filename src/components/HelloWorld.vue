@@ -1,0 +1,445 @@
+<template>
+  <div class="container-fluid" ref="main">
+    <resize-observer @notify="handleResize" />
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Braindr Ratings
+              </div>
+              <div class="chart-stage" ref="braindr">
+                <svg id="scatterBarArea"></svg>
+              </div>
+              <div class="chart-notes mb-3">
+                Notes about this braindr
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Mindcontrol Ratings
+              </div>
+              <div class="chart-stage" ref="mc">
+                <svg id="scatterBarAreaMc"></svg>
+              </div>
+              <div class="chart-notes mb-3">
+                Notes about this mc
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                MRIQC Ratings
+              </div>
+              <div class="chart-stage" ref="mriqc">
+                <svg id="scatterBarAreaMriqc"></svg>
+              </div>
+              <div class="chart-notes">
+                Notes about this mriqc
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Age vs Gray Matter Volume
+              </div>
+              <div class="chart-stage" ref="scatter">
+                <svg id="scatterArea"></svg>
+              </div>
+              <div class="chart-notes">
+                Mindboggle metrics
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Put the Images here!! -->
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import _ from 'lodash';
+import 'vue-resize/dist/vue-resize.css';
+import Vue from 'vue';
+import VueResize from 'vue-resize';
+import dataset from '../assets/braindr_results_final-3-5-18.json';
+
+Vue.use(VueResize);
+
+const d3 = require('d3');
+/* eslint func-names: ["error", "as-needed"] */
+
+const highlightOnColor = '#ffc107';
+const highlightOffColor = '#6c757d';
+
+const resizeAxes = function (ax) {
+  d3
+    .select(ax.elem)
+    .attr('width', ax.width + ax.margin.left + ax.margin.right)
+    .attr('height', ax.height + ax.margin.top + ax.margin.bottom);
+  // ax.svg.select('.plotArea')
+
+  ax.svg.select('.x.axis.label')
+    .attr('x', ax.width / 2)
+    .call(ax.xAxis);
+};
+
+const renderAxes = function (elem, hei, wid) {
+  // define margins on the plot -- this will give room for axes labels, titles
+  const H = hei || 300;
+  const W = wid || 500;
+  const margin = { top: 20, right: 20, bottom: 30, left: 60 };
+
+  // total dimensions are 500x300
+  const width = W - margin.left - margin.right;
+  const height = H - margin.top - margin.bottom;
+
+  // value -> display
+  const xScale = d3.scaleLinear().range([0, width]);
+  const yScale = d3.scaleLinear().range([height, 0]);
+  // in SVG, y=0 is at the top, so we switch the order
+
+  const svg = d3
+    .select(elem)
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+    .append('g')
+    .attr('class', 'plotArea')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+  const xAxis = d3.axisBottom(xScale); // axis object
+  const yAxis = d3.axisLeft(yScale);
+
+  // x-axis
+  svg
+    .append('g')
+    .attr('class', 'x axis')
+    // take X to bottom of SVG
+    .attr('transform', `translate(0,${height})`)
+    .call(xAxis)
+    .append('text')
+    .attr('class', 'label')
+    .attr('x', width / 2)
+    .attr('y', 25)
+    .attr('font-size', '1em')
+    .style('text-anchor', 'end')
+    .style('fill', 'black')
+    .text('X');
+
+  // y-axis
+  svg
+    .append('g')
+    .attr('class', 'y axis')
+    .call(yAxis)
+    .append('text')
+    .attr('class', 'label')
+    .attr('transform', 'rotate(-90)')
+    .attr('y', -50)
+    .attr('x', -height / 2)
+    .attr('dy', '.71em')
+    .attr('font-size', '1em')
+    .style('text-anchor', 'end')
+    .style('fill', 'black')
+    .text('Y');
+
+  return {
+    svg,
+    xScale,
+    yScale,
+    xAxis,
+    yAxis,
+    height,
+    width,
+    elem,
+    margin,
+  };
+};
+
+const scatterPoints = function (ax, data, xName, yName, hoverOnCallback, hoverOffCallback) {
+  const xValue = function (d) {
+    return d[xName];
+  };
+  const yValue = function (d) {
+    return d[yName];
+  };
+
+  // set domain again in case data changed bounds
+  ax.xScale.domain([d3.min(data, xValue), d3.max(data, xValue)]);
+  ax.yScale.domain([d3.min(data, yValue), d3.max(data, yValue)]);
+
+  // redraw axis
+  ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text(xName);
+
+  ax.svg.selectAll('.y.axis').call(ax.yAxis).selectAll('.label').text(yName);
+
+  // add data
+  ax.svg
+    .selectAll('.dot')
+    .data(data)
+    .enter()
+    .append('circle')
+    .attr('class', 'dot');
+
+  ax.typeSelector = '.dot';
+  ax.xName = xName;
+  ax.yName = yName;
+  // update data
+  ax.svg
+    .selectAll('.dot')
+    .attr('cx', d => ax.xScale(xValue(d)))
+    .transition()
+    .duration(1000)
+    .attr('cy', d => ax.yScale(yValue(d)));
+
+  // events: when you highlight a dot, highlight the corresponding histogram bar
+  ax.svg
+    .selectAll('.dot')
+    .on('mouseover', function setColor(d, i) {
+      d3.select(this).style('fill', () => highlightOnColor);
+      hoverOnCallback(d, i);
+    })
+    .on('mouseout', (d, i) => {
+      ax.svg.selectAll('.dot').style('fill', highlightOffColor);
+      hoverOffCallback(d, i);
+    });
+
+  // remove dots
+  ax.svg
+    .selectAll('.dot')
+    .data(data)
+    .exit()
+    .transition()
+    .duration(1000)
+    .style('opacity', 1e-6)
+    .attr('cy', () => 0)
+    .remove();
+};
+
+const barGraph = function (ax, data, xName, yName, xMin, xMax, binSize) {
+  const xValue = function (d) {
+    return d[xName];
+  };
+  const yValue = function (d) {
+    return d[yName];
+  };
+
+  // set domain again in case data changed bounds
+  ax.xScale.domain([xMin, xMax]);
+  ax.yScale.domain([d3.min(data, yValue), d3.max(data, yValue)]);
+
+  // redraw axis
+  ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text(xName);
+
+  ax.svg.selectAll('.y.axis').call(ax.yAxis).selectAll('.label').text(yName);
+
+  ax.svg.selectAll('.bar')
+    .data(data)
+    .enter()
+    .append('rect')
+    .attr('class', 'bar');
+
+  ax.svg.selectAll('.bar')
+    .attr('x', d => ax.xScale(xValue(d)))
+    .attr('width', ax.xScale(binSize) - ax.xScale(0))
+    .attr('y', d => ax.yScale(yValue(d)))
+    .attr('height', d => ax.height - ax.yScale(yValue(d)));
+
+  ax.typeSelector = '.bar';
+  ax.xName = xName;
+  ax.yName = yName;
+
+  ax.svg.selectAll('.bar')
+    .data(data)
+    .exit()
+    .remove('rect');
+};
+
+const pointSelector = function (ax, points) {
+  ax.svg.selectAll(ax.typeSelector)
+    .each(function getItem(d) {
+      if (points.indexOf(d[ax.xName]) >= 0) {
+        d3.select(this).attr('fill', 'black');
+      }
+    });
+};
+
+const barSelectorOn = function (ax, point) {
+  ax.svg.selectAll(ax.typeSelector)
+    .each(function getItem(d) {
+      if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
+        d3.select(this).style('fill', highlightOnColor);
+      }
+    });
+};
+
+const barSelectorOff = function (ax, point) {
+  ax.svg.selectAll(ax.typeSelector)
+    .style('fill', '#6c757d');
+};
+
+
+export default {
+  name: 'HelloWorld',
+  data() {
+    return {
+      msg: 'Brain Volume vs Age',
+      data: dataset,
+      axes: {
+        scatter: { data: dataset, ax: null, xName: 'age', yName: 'gray_matter', ref: 'scatter' },
+        braindr: { data: null,
+          ref: 'braindr',
+          ax: null,
+          xMin: 0,
+          xMax: 1,
+          binSize: 0.1,
+          xName: 'x0',
+          yName: 'length',
+          mName: 'label_3D_avg' },
+        mc: { data: null,
+          ref: 'mc',
+          ax: null,
+          xMin: -5,
+          xMax: 5,
+          binSize: 1,
+          xName: 'x0',
+          yName: 'length',
+          mName: 'mc_rating' },
+        mriqc: { data: null,
+          ref: 'mriqc',
+          ax: null,
+          xMin: 0,
+          xMax: 1,
+          binSize: 0.1,
+          xName: 'x0',
+          yName: 'length',
+          mName: 'mriqc_pred_xg' },
+      },
+    };
+  },
+  created() {
+    this.data.forEach((val, idx) => {
+      this.data[idx].age = val.metrics.Age;
+    });
+  },
+  methods: {
+    handleResize() {
+      console.log('resized');
+      this.resetRange(this.axes.scatter);
+      scatterPoints(this.axes.scatter.ax, this.axes.scatter.data,
+        this.axes.scatter.xName, this.axes.scatter.yName,
+        (p) => {
+          barSelectorOn(this.axes.braindr.ax, p);
+          barSelectorOn(this.axes.mc.ax, p);
+          barSelectorOn(this.axes.mriqc.ax, p);
+        },
+        () => {
+          barSelectorOff(this.axes.braindr.ax);
+          barSelectorOff(this.axes.mc.ax);
+          barSelectorOff(this.axes.mriqc.ax);
+        });
+
+      this.resetRange(this.axes.braindr);
+      barGraph(this.axes.braindr.ax, this.axes.braindr.data,
+        this.axes.braindr.xName, this.axes.braindr.yName,
+        this.axes.braindr.xMin, this.axes.braindr.xMax, this.axes.braindr.binSize);
+
+      this.resetRange(this.axes.mc);
+      barGraph(this.axes.mc.ax, this.axes.mc.data,
+        this.axes.mc.xName, this.axes.mc.yName,
+        this.axes.mc.xMin, this.axes.mc.xMax, this.axes.mc.binSize);
+
+      this.resetRange(this.axes.mriqc);
+      barGraph(this.axes.mriqc.ax, this.axes.mriqc.data,
+        this.axes.mriqc.xName, this.axes.mriqc.yName,
+        this.axes.mriqc.xMin, this.axes.mriqc.xMax, this.axes.mriqc.binSize);
+    },
+    resetRange(axD) {
+      const width = this.$refs[axD.ref].clientWidth - axD.ax.margin.left - axD.ax.margin.right;
+      console.log('width', width);
+      axD.ax.xScale.range([0, width]);
+      axD.ax.width = width;
+      resizeAxes(axD.ax);
+    },
+  },
+  mounted() {
+    const W = this.$refs.scatter.clientWidth;
+    const ax = renderAxes('#scatterArea', 450, W);
+    this.axes.scatter.ax = ax;
+
+    // console.log(this.data)
+
+    const ax2 = renderAxes('#scatterBarArea', 150, this.$refs.braindr.clientWidth);
+    this.axes.braindr.ax = ax2;
+    const ax3 = renderAxes('#scatterBarAreaMc', 150, this.$refs.mc.clientWidth);
+    this.axes.mc.ax = ax3;
+    const ax4 = renderAxes('#scatterBarAreaMriqc', 150, this.$refs.mriqc.clientWidth);
+    this.axes.mriqc.ax = ax4;
+
+    const hist = d3.histogram().domain([0, 1]);
+    const hist2 = d3.histogram().domain([-5, 5]);
+
+    const histDataBraindr = hist(_.map(this.data, d => d.label_3D_avg));
+    this.axes.braindr.data = histDataBraindr;
+    this.axes.braindr.ax.mName = this.axes.braindr.mName;
+    barGraph(ax2, histDataBraindr, 'x0', 'length', 0, 1, 0.1);
+
+    const histDataMc = hist2(_.map(this.data, d => d.mc_rating));
+    this.axes.mc.data = histDataMc;
+    this.axes.mc.ax.mName = this.axes.mc.mName;
+    barGraph(ax3, histDataMc, 'x0', 'length', -5, 5, 1);
+
+    const histDataMriqc = hist(_.map(this.data, d => d.mriqc_pred_xg));
+    this.axes.mriqc.data = histDataMriqc;
+    this.axes.mriqc.ax.mName = this.axes.mriqc.mName;
+    barGraph(ax4, histDataMriqc, 'x0', 'length', 0, 1, 0.1);
+
+    scatterPoints(ax, this.data, 'age', 'gray_matter',
+      (p) => {
+        barSelectorOn(this.axes.braindr.ax, p);
+        barSelectorOn(this.axes.mc.ax, p);
+        barSelectorOn(this.axes.mriqc.ax, p);
+      },
+      () => {
+        barSelectorOff(this.axes.braindr.ax);
+        barSelectorOff(this.axes.mc.ax);
+        barSelectorOff(this.axes.mriqc.ax);
+      });
+  },
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+
+.dot {
+  stroke: lightgray; /*circle border*/
+  fill: #6c757d; /*circle color*/
+  r: 7; /*circle radius*/
+}
+
+.bar {
+  stroke: lightgray; /*circle border*/
+  fill: #6c757d; /*circle color*/
+}
+
+.chart-notes {
+  font-size: 0.75em;
+}
+
+</style>

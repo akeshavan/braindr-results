@@ -59,14 +59,19 @@
               <div class="chart-stage" ref="scatter">
                 <svg id="scatterArea"></svg>
               </div>
-              <div class="chart-notes">
-                Mindboggle metrics
+              <div class="chart-notes mb-3">
+
               </div>
             </div>
           </div>
         </div>
         <div class="row">
           <!-- Put the Images here!! -->
+          <div class="text-center w-100">
+            <h5 class="mb-0 pb-0">braindr images</h5>
+            <small class="mt-0 pt-0">Hover over a point above to view slices</small>
+          </div>
+          <div class="images mx-auto"></div>
         </div>
       </div>
     </div>
@@ -84,6 +89,10 @@ Vue.use(VueResize);
 
 const d3 = require('d3');
 /* eslint func-names: ["error", "as-needed"] */
+/*
+eslint no-param-reassign: ["error", { "props": true,"ignorePropertyModificationsFor":["ax", "axD"]}]
+*/
+
 
 const highlightOnColor = '#ffc107';
 const highlightOffColor = '#6c757d';
@@ -231,7 +240,8 @@ const scatterPoints = function (ax, data, xName, yName, hoverOnCallback, hoverOf
     .remove();
 };
 
-const barGraph = function (ax, data, xName, yName, xMin, xMax, binSize) {
+const barGraph = function (ax, data, xName, yName, xMin, xMax,
+  binSize, hoverOnCallback, hoverOffCallback) {
   const xValue = function (d) {
     return d[xName];
   };
@@ -268,15 +278,31 @@ const barGraph = function (ax, data, xName, yName, xMin, xMax, binSize) {
     .data(data)
     .exit()
     .remove('rect');
+
+  ax.svg.selectAll('.bar')
+    .on('mouseover', function setColor(d, i) {
+      d3.select(this).style('fill', highlightOnColor);
+      hoverOnCallback(d, i);
+    })
+    .on('mouseout', function setColor(d, i) {
+      d3.select(this).style('fill', highlightOffColor);
+      hoverOffCallback(d, i);
+    });
 };
 
-const pointSelector = function (ax, points) {
+const pointSelectorOn = function (ax, mName, points) {
+  // console.log('points hover', points);
   ax.svg.selectAll(ax.typeSelector)
     .each(function getItem(d) {
-      if (points.indexOf(d[ax.xName]) >= 0) {
-        d3.select(this).attr('fill', 'black');
+      if (d[mName] > points.x0 && d[mName] <= points.x1) {
+        d3.select(this).style('fill', highlightOnColor);
       }
     });
+};
+
+const pointSelectorOff = function (ax) {
+  ax.svg.selectAll(ax.typeSelector)
+    .style('fill', highlightOffColor);
 };
 
 const barSelectorOn = function (ax, point) {
@@ -286,11 +312,29 @@ const barSelectorOn = function (ax, point) {
         d3.select(this).style('fill', highlightOnColor);
       }
     });
+
+  d3.select('.images').selectAll('.image')
+    .data(point.braindr_images)
+    .enter()
+    .append('img')
+    .attr('class', 'image');
+
+  d3.select('.images').selectAll('.image')
+    .attr('src', d => `https://dxugxjm290185.cloudfront.net/braindr/${d}.jpg`);
+
+  d3.select('.images').selectAll('.image')
+    .data(point.braindr_images)
+    .exit()
+    .remove('img');
 };
 
-const barSelectorOff = function (ax, point) {
+const barSelectorOff = function (ax) {
   ax.svg.selectAll(ax.typeSelector)
     .style('fill', '#6c757d');
+  d3.select('.images').selectAll('.image')
+    .data([])
+    .exit()
+    .remove('img');
 };
 
 
@@ -339,7 +383,6 @@ export default {
   },
   methods: {
     handleResize() {
-      console.log('resized');
       this.resetRange(this.axes.scatter);
       scatterPoints(this.axes.scatter.ax, this.axes.scatter.data,
         this.axes.scatter.xName, this.axes.scatter.yName,
@@ -357,21 +400,39 @@ export default {
       this.resetRange(this.axes.braindr);
       barGraph(this.axes.braindr.ax, this.axes.braindr.data,
         this.axes.braindr.xName, this.axes.braindr.yName,
-        this.axes.braindr.xMin, this.axes.braindr.xMax, this.axes.braindr.binSize);
+        this.axes.braindr.xMin, this.axes.braindr.xMax,
+        this.axes.braindr.binSize,
+        (p) => {
+          pointSelectorOn(this.axes.scatter.ax, this.axes.braindr.mName, p);
+        },
+        () => {
+          pointSelectorOff(this.axes.scatter.ax);
+        });
 
       this.resetRange(this.axes.mc);
       barGraph(this.axes.mc.ax, this.axes.mc.data,
         this.axes.mc.xName, this.axes.mc.yName,
-        this.axes.mc.xMin, this.axes.mc.xMax, this.axes.mc.binSize);
+        this.axes.mc.xMin, this.axes.mc.xMax, this.axes.mc.binSize,
+        (p) => {
+          pointSelectorOn(this.axes.scatter.ax, this.axes.mc.mName, p);
+        },
+        () => {
+          pointSelectorOff(this.axes.scatter.ax);
+        });
 
       this.resetRange(this.axes.mriqc);
       barGraph(this.axes.mriqc.ax, this.axes.mriqc.data,
         this.axes.mriqc.xName, this.axes.mriqc.yName,
-        this.axes.mriqc.xMin, this.axes.mriqc.xMax, this.axes.mriqc.binSize);
+        this.axes.mriqc.xMin, this.axes.mriqc.xMax, this.axes.mriqc.binSize,
+        (p) => {
+          pointSelectorOn(this.axes.scatter.ax, this.axes.mriqc.mName, p);
+        },
+        () => {
+          pointSelectorOff(this.axes.scatter.ax);
+        });
     },
     resetRange(axD) {
       const width = this.$refs[axD.ref].clientWidth - axD.ax.margin.left - axD.ax.margin.right;
-      console.log('width', width);
       axD.ax.xScale.range([0, width]);
       axD.ax.width = width;
       resizeAxes(axD.ax);
@@ -397,17 +458,35 @@ export default {
     const histDataBraindr = hist(_.map(this.data, d => d.label_3D_avg));
     this.axes.braindr.data = histDataBraindr;
     this.axes.braindr.ax.mName = this.axes.braindr.mName;
-    barGraph(ax2, histDataBraindr, 'x0', 'length', 0, 1, 0.1);
+    barGraph(ax2, histDataBraindr, 'x0', 'length', 0, 1, 0.1,
+      (p) => {
+        pointSelectorOn(this.axes.scatter.ax, this.axes.braindr.mName, p);
+      },
+      () => {
+        pointSelectorOff(this.axes.scatter.ax);
+      });
 
     const histDataMc = hist2(_.map(this.data, d => d.mc_rating));
     this.axes.mc.data = histDataMc;
     this.axes.mc.ax.mName = this.axes.mc.mName;
-    barGraph(ax3, histDataMc, 'x0', 'length', -5, 5, 1);
+    barGraph(ax3, histDataMc, 'x0', 'length', -5, 5, 1,
+      (p) => {
+        pointSelectorOn(this.axes.scatter.ax, this.axes.mc.mName, p);
+      },
+      () => {
+        pointSelectorOff(this.axes.scatter.ax);
+      });
 
     const histDataMriqc = hist(_.map(this.data, d => d.mriqc_pred_xg));
     this.axes.mriqc.data = histDataMriqc;
     this.axes.mriqc.ax.mName = this.axes.mriqc.mName;
-    barGraph(ax4, histDataMriqc, 'x0', 'length', 0, 1, 0.1);
+    barGraph(ax4, histDataMriqc, 'x0', 'length', 0, 1, 0.1,
+      (p) => {
+        pointSelectorOn(this.axes.scatter.ax, this.axes.mriqc.mName, p);
+      },
+      () => {
+        pointSelectorOff(this.axes.scatter.ax);
+      });
 
     scatterPoints(ax, this.data, 'age', 'gray_matter',
       (p) => {
@@ -423,6 +502,7 @@ export default {
   },
 };
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
@@ -440,6 +520,14 @@ export default {
 
 .chart-notes {
   font-size: 0.75em;
+}
+
+.image {
+  max-width: 150px;
+}
+
+h5 {
+  font-weight: 300;
 }
 
 </style>

@@ -92,6 +92,7 @@ const d3 = require('d3');
 /*
 eslint no-param-reassign: ["error", { "props": true,"ignorePropertyModificationsFor":["ax", "axD"]}]
 */
+/* eslint prefer-arrow-callback: [ "error", { "allowNamedFunctions": true } ] */
 
 
 const highlightOnColor = '#ffc107';
@@ -288,10 +289,41 @@ const barGraph = function (ax, data, xName, yName, xMin, xMax,
       d3.select(this).style('fill', highlightOffColor);
       hoverOffCallback(d, i);
     });
+
+  /* The brush */
+  const brush = d3.brushX()
+    .extent([[0, 0], [ax.width, ax.height]])
+    .on('brush end', function brushend() {
+      const selection = d3.event.selection;
+      if (selection) {
+        const extent = selection.map(ax.xScale.invert);
+        ax.svg.selectAll('.bar').each(function highlight(d, i) {
+          if ((d.x1 <= extent[1] && d.x1 > extent[0]) || (d.x0 <= extent[1] && d.x0 > extent[0])) {
+            d3.select(this).style('fill', highlightOnColor);
+            hoverOnCallback(d, i);
+          } else {
+            d3.select(this).style('fill', highlightOffColor);
+            hoverOffCallback(d, i);
+          }
+        });
+      } else {
+        // you've undone selection
+        ax.svg.selectAll('.bar').each(function highlight(d, i) {
+          d3.select(this).style('fill', highlightOffColor);
+          hoverOffCallback(d, i);
+        });
+      }
+    });
+
+  if (!ax.svg.select('.brush').length) {
+    ax.svg.append('g')
+      .attr('class', 'brush')
+      .call(brush);
+    /* .call(brush.move, x.range()); */
+  }
 };
 
 const pointSelectorOn = function (ax, mName, points) {
-  // console.log('points hover', points);
   ax.svg.selectAll(ax.typeSelector)
     .each(function getItem(d) {
       if (d[mName] > points.x0 && d[mName] <= points.x1) {
@@ -300,9 +332,13 @@ const pointSelectorOn = function (ax, mName, points) {
     });
 };
 
-const pointSelectorOff = function (ax) {
+const pointSelectorOff = function (ax, mName, points) {
   ax.svg.selectAll(ax.typeSelector)
-    .style('fill', highlightOffColor);
+    .each(function getItem(d) {
+      if (d[mName] > points.x0 && d[mName] <= points.x1) {
+        d3.select(this).style('fill', highlightOffColor);
+      }
+    });
 };
 
 const barSelectorOn = function (ax, point) {
@@ -310,7 +346,9 @@ const barSelectorOn = function (ax, point) {
     .each(function getItem(d) {
       if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
         d3.select(this).style('fill', highlightOnColor);
-      }
+      } /* else {
+        d3.select(this).style('fill', highlightOffColor);
+      } */
     });
 
   d3.select('.images').selectAll('.image')
@@ -328,9 +366,17 @@ const barSelectorOn = function (ax, point) {
     .remove('img');
 };
 
-const barSelectorOff = function (ax) {
+const barSelectorOff = function (ax, point) {
+  /* ax.svg.selectAll(ax.typeSelector)
+    .style('fill', '#6c757d'); */
+
   ax.svg.selectAll(ax.typeSelector)
-    .style('fill', '#6c757d');
+    .each(function getItem(d) {
+      if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
+        d3.select(this).style('fill', highlightOffColor);
+      }
+    });
+
   d3.select('.images').selectAll('.image')
     .data([])
     .exit()
@@ -391,10 +437,10 @@ export default {
           barSelectorOn(this.axes.mc.ax, p);
           barSelectorOn(this.axes.mriqc.ax, p);
         },
-        () => {
-          barSelectorOff(this.axes.braindr.ax);
-          barSelectorOff(this.axes.mc.ax);
-          barSelectorOff(this.axes.mriqc.ax);
+        (p) => {
+          barSelectorOff(this.axes.braindr.ax, p);
+          barSelectorOff(this.axes.mc.ax, p);
+          barSelectorOff(this.axes.mriqc.ax, p);
         });
 
       this.resetRange(this.axes.braindr);
@@ -405,8 +451,8 @@ export default {
         (p) => {
           pointSelectorOn(this.axes.scatter.ax, this.axes.braindr.mName, p);
         },
-        () => {
-          pointSelectorOff(this.axes.scatter.ax);
+        (p) => {
+          pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
         });
 
       this.resetRange(this.axes.mc);
@@ -416,8 +462,8 @@ export default {
         (p) => {
           pointSelectorOn(this.axes.scatter.ax, this.axes.mc.mName, p);
         },
-        () => {
-          pointSelectorOff(this.axes.scatter.ax);
+        (p) => {
+          pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
         });
 
       this.resetRange(this.axes.mriqc);
@@ -427,8 +473,8 @@ export default {
         (p) => {
           pointSelectorOn(this.axes.scatter.ax, this.axes.mriqc.mName, p);
         },
-        () => {
-          pointSelectorOff(this.axes.scatter.ax);
+        (p) => {
+          pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
         });
     },
     resetRange(axD) {
@@ -462,8 +508,8 @@ export default {
       (p) => {
         pointSelectorOn(this.axes.scatter.ax, this.axes.braindr.mName, p);
       },
-      () => {
-        pointSelectorOff(this.axes.scatter.ax);
+      (p) => {
+        pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
       });
 
     const histDataMc = hist2(_.map(this.data, d => d.mc_rating));
@@ -473,8 +519,8 @@ export default {
       (p) => {
         pointSelectorOn(this.axes.scatter.ax, this.axes.mc.mName, p);
       },
-      () => {
-        pointSelectorOff(this.axes.scatter.ax);
+      (p) => {
+        pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
       });
 
     const histDataMriqc = hist(_.map(this.data, d => d.mriqc_pred_xg));
@@ -484,8 +530,8 @@ export default {
       (p) => {
         pointSelectorOn(this.axes.scatter.ax, this.axes.mriqc.mName, p);
       },
-      () => {
-        pointSelectorOff(this.axes.scatter.ax);
+      (p) => {
+        pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
       });
 
     scatterPoints(ax, this.data, 'age', 'gray_matter',
@@ -494,10 +540,10 @@ export default {
         barSelectorOn(this.axes.mc.ax, p);
         barSelectorOn(this.axes.mriqc.ax, p);
       },
-      () => {
-        barSelectorOff(this.axes.braindr.ax);
-        barSelectorOff(this.axes.mc.ax);
-        barSelectorOff(this.axes.mriqc.ax);
+      (p) => {
+        barSelectorOff(this.axes.braindr.ax, p);
+        barSelectorOff(this.axes.mc.ax, p);
+        barSelectorOff(this.axes.mriqc.ax, p);
       });
   },
 };

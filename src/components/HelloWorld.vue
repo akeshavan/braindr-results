@@ -49,20 +49,12 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-9">
+      <div class="col-sm-7">
         <div class="row">
           <div class="col-sm-12">
             <div class="chart-wrapper">
               <div class="chart-title">
-                Age vs Gray Matter Volume:
-                <br>
-                <span v-if="model.R2"> R2: {{model.adjust_R2}}</span>
-                <br>
-                <span v-if="model.t">t values: {{model.t.t}}</span>
-                <br>
-                <span v-if="model.t">coef: {{model.coef}}</span>
-                <br>
-                <span v-if="model.t">shape: {{pointArrays.X.length}}</span>
+                <h5>Age vs Gray Matter Volume:</h5>
               </div>
               <div class="chart-stage" ref="scatter">
                 <svg id="scatterArea"></svg>
@@ -82,6 +74,84 @@
           <div class="images mx-auto"></div>
         </div>
       </div>
+      <div class="col-sm-2">
+        <div class="row mb-3">
+          <div class="col-sm-12">
+            <h4 class="mb-0 pb-0">Statistics</h4>
+            <small> Results from an OLS model </small>
+          </div>
+        </div>
+        <!-- R2 -->
+        <div class="row mb-3">
+          <div class="col-sm-12">
+            <h4 v-if="model.R2" class="mb-0 pb-0"> {{model.R2 | formatNumber}} </h4>
+            <span > R<sup>2</sup> </span>
+          </div>
+        </div>
+
+        <!-- Coef age-->
+        <div class="row mb-3">
+          <div class="col-sm-12">
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              {{model.coef[1] | formatNumber}}
+            </h4>
+            <span > Age Coefficient (mm<sup>3</sup>/yr) </span>
+          </div>
+        </div>
+
+        <!-- T age-->
+        <div class="row mb-3">
+          <div class="col-sm-12">
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              {{model.t.t[1] | formatNumber}}
+            </h4>
+            <span > t(Age) </span>
+          </div>
+        </div>
+
+        <!-- Coef intercept-->
+        <div class="row mb-3">
+          <div class="col-sm-12">
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              {{model.coef[0] | formatNumber}}
+            </h4>
+            <span > Intercept (mm<sup>3</sup>) </span>
+          </div>
+        </div>
+
+
+        <!-- T intercept-->
+        <div class="row mb-3">
+          <div class="col-sm-12">
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              {{model.t.t[0] | formatNumber}}
+            </h4>
+            <span > t(Intercept) </span>
+          </div>
+        </div>
+
+        <!-- p(Age)-->
+        <div class="row mb-3">
+          <div class="col-sm-12">
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              {{model.t.p[1] | formatNumber1}}
+            </h4>
+            <span > p(Age) </span>
+          </div>
+        </div>
+
+        <!-- n comparisons-->
+        <div class="row mb-3">
+          <div class="col-sm-12">
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              {{nComparisons}}
+            </h4>
+            <span > Number of Comparisons </span>
+          </div>
+        </div>
+
+
+      </div>
     </div>
   </div>
 </template>
@@ -91,9 +161,12 @@ import _ from 'lodash';
 import 'vue-resize/dist/vue-resize.css';
 import Vue from 'vue';
 import VueResize from 'vue-resize';
+import numeral from 'numeral';
 import dataset from '../assets/braindr_results_final-3-5-18.json';
 
 Vue.use(VueResize);
+Vue.filter('formatNumber', value => numeral(value).format('0.0[0]'));
+Vue.filter('formatNumber1', value => numeral(value).format('0.0e+0'));
 
 const d3 = require('d3');
 const jStat = require('jStat').jStat;
@@ -124,6 +197,7 @@ export default {
       data: dataset,
       brushedPoints: [],
       model: {},
+      nComparisons: 1,
       globalBrushes: {},
       selectedBarIndices: [],
       selectedBarMetric: null,
@@ -519,6 +593,7 @@ export default {
           }
           self.runModel();
           self.lineGraph();
+          self.nComparisons += 1;
         });
 
       if (!ax.svg.select('.brush').length) {

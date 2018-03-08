@@ -54,7 +54,13 @@
           <div class="col-sm-12">
             <div class="chart-wrapper">
               <div class="chart-title">
-                <h5>Age vs Gray Matter Volume:</h5>
+                <h5>Age vs
+
+                  <b-form-select v-model="axes.scatter.yName" style="max-width: 150px;"
+                            :options="metricOptions" class="mb-1"/>
+
+                    Volume:
+                </h5>
               </div>
               <div class="chart-stage" ref="scatter">
                 <svg id="scatterArea"></svg>
@@ -75,6 +81,8 @@
         </div>
       </div>
       <div class="col-sm-2">
+
+
         <div class="row mb-3">
           <div class="col-sm-12">
             <h4 class="mb-0 pb-0">Statistics</h4>
@@ -150,6 +158,37 @@
           </div>
         </div>
 
+        <hr>
+
+        <div class="row mb-0">
+          <div class="col-sm-12">
+            <b-form-group label="Split by Sex">
+              <b-form-radio-group id="btnradios2"
+                                  buttons
+                                  button-variant="outline-info"
+                                  size="sm"
+                                  v-model="selectedType"
+                                  :options="typeOptions"
+                                  class="mb-0"
+                                  name="radioBtnOutline" />
+            </b-form-group>
+          </div>
+        </div>
+
+        <div class="row mb-0">
+          <div class="col-sm-12">
+            <b-form-group label="Polynomial Fit">
+              <b-form-radio-group id="btnradios3"
+                                  buttons
+                                  button-variant="outline-primary"
+                                  size="sm"
+                                  v-model="selectedPolyType"
+                                  :options="polytypeOptions"
+                                  class="mb-0"
+                                  name="radioBtnOutline" />
+            </b-form-group>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -185,6 +224,7 @@ const highlightOffColor = '#6c757d'; // secondary
 const brushOnColor = '#17a2b8'; // info
 const lineColor = '#dc3545'; // danger
 const confColor = '#dc3545'; // danger again
+const clickColor = '#28a745'; // success
 // const selectedIndices = [];
 // window.selectedIndices = selectedIndices;
 
@@ -199,6 +239,30 @@ export default {
       model: {},
       nComparisons: 1,
       globalBrushes: {},
+      metricOptions: [{
+        value: 'gray_matter',
+        text: 'gray matter',
+      },
+      {
+        value: 'white_matter',
+        text: 'white matter',
+      },
+      {
+        value: 'csf',
+        text: 'CSF',
+      },
+      ],
+      selectedType: false,
+      typeOptions: [
+        { text: 'Off', value: false },
+        { text: 'On', value: true },
+      ],
+      selectedPolyType: false,
+      polytypeOptions: [
+        { text: 'Off', value: false },
+        { text: 'On', value: true },
+      ],
+      clickPointIdx: null,
       selectedBarIndices: [],
       selectedBarMetric: null,
       axes: {
@@ -284,6 +348,11 @@ export default {
       }
 
       return { X, y };
+    },
+  },
+  watch: {
+    'axes.scatter.yName': function replot() {
+      this.plotMetric();
     },
   },
   created() {
@@ -469,9 +538,21 @@ export default {
           let color = highlightOffColor;
           if (self.selectedPointIndices.indexOf(i) >= 0) {
             color = brushOnColor;
+          } else if (i === self.clickPointIdx) {
+            color = clickColor;
           }
           d3.select(this).style('fill', color);
           hoverOffCallback(d, i);
+        })
+        .on('click', function setClick(d, i) {
+          let color = clickColor;
+          if (!self.clickPointIdx) {
+            self.clickPointIdx = i;
+          } else {
+            color = highlightOffColor;
+            self.clickPointIdx = null;
+          }
+          d3.select(this).style('fill', color);
         });
 
       // remove dots
@@ -673,10 +754,12 @@ export default {
           }
         });
 
-      d3.select('.images').selectAll('.image')
-        .data([])
-        .exit()
-        .remove('img');
+      if (self.clickPointIdx == null) {
+        d3.select('.images').selectAll('.image')
+          .data([])
+          .exit()
+          .remove('img');
+      }
     },
     lineGraph() {
       const ax = this.axes.scatter;
@@ -729,7 +812,7 @@ export default {
         ax.ax.svg.append('path')
           .attr('class', 'fitconf')
           .attr('fill', confColor)
-          .attr('opacity', 0.25)
+          .attr('opacity', 0.25);
       }
 
       ax.ax.svg.select('.fit')
@@ -739,6 +822,24 @@ export default {
       ax.ax.svg.select('.fitconf')
         .datum(confData)
         .attr('d', confidenceArea);
+    },
+    plotMetric() {
+      console.log('running plotMetric', this.axes.scatter.yName);
+      this.scatterPoints(this.axes.scatter.ax, this.data,
+        this.axes.scatter.xName, this.axes.scatter.yName,
+        (p) => {
+          this.barSelectorOn(this.axes.braindr.ax, p);
+          this.barSelectorOn(this.axes.mc.ax, p);
+          this.barSelectorOn(this.axes.mriqc.ax, p);
+        },
+        (p) => {
+          this.barSelectorOff(this.axes.braindr.ax, p);
+          this.barSelectorOff(this.axes.mc.ax, p);
+          this.barSelectorOff(this.axes.mriqc.ax, p);
+        });
+
+      this.runModel();
+      this.lineGraph();
     },
     runModel() {
       this.model = jStat.models.ols(this.pointArrays.y, this.pointArrays.X);
@@ -794,7 +895,7 @@ export default {
         this.pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
       });
 
-    this.scatterPoints(ax, this.data, 'age', 'gray_matter',
+    this.scatterPoints(ax, this.data, this.axes.scatter.xName, this.axes.scatter.yName,
       (p) => {
         this.barSelectorOn(this.axes.braindr.ax, p);
         this.barSelectorOn(this.axes.mc.ax, p);

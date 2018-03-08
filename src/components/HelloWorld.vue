@@ -224,7 +224,7 @@ const highlightOffColor = '#6c757d'; // secondary
 const brushOnColor = '#17a2b8'; // info
 const lineColor = '#dc3545'; // danger
 const confColor = '#dc3545'; // danger again
-const clickColor = '#28a745'; // success
+const clickColor = highlightOnColor; // '#28a745'; // success
 // const selectedIndices = [];
 // window.selectedIndices = selectedIndices;
 
@@ -538,14 +538,13 @@ export default {
           let color = highlightOffColor;
           if (self.selectedPointIndices.indexOf(i) >= 0) {
             color = brushOnColor;
-          } else if (i === self.clickPointIdx) {
-            color = clickColor;
           }
           d3.select(this).style('fill', color);
           hoverOffCallback(d, i);
         })
         .on('click', function setClick(d, i) {
           let color = clickColor;
+          let swidth = 3;
           if (!self.clickPointIdx) {
             self.clickPointIdx = i;
           } else if (self.clickPointIdx !== i) {
@@ -556,15 +555,18 @@ export default {
                 if (self.selectedPointIndices.indexOf(ii) >= 0) {
                   color2 = brushOnColor;
                 }
-                d3.select(this).style('fill', color2);
+                d3.select(this).style('stroke', color2);
+                d3.select(this).style('stroke-width', 1);
               }
             });
             self.clickPointIdx = i;
           } else {
             color = highlightOffColor;
+            swidth = 1;
             self.clickPointIdx = null;
           }
-          d3.select(this).style('fill', color);
+          d3.select(this).style('stroke', color);
+          d3.select(this).style('stroke-width', swidth);
         });
 
       // remove dots
@@ -836,7 +838,6 @@ export default {
         .attr('d', confidenceArea);
     },
     plotMetric() {
-      console.log('running plotMetric', this.axes.scatter.yName);
       this.scatterPoints(this.axes.scatter.ax, this.data,
         this.axes.scatter.xName, this.axes.scatter.yName,
         (p) => {

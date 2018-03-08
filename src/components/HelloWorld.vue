@@ -111,6 +111,7 @@ const highlightOnColor = '#ffc107'; // warning
 const highlightOffColor = '#6c757d'; // secondary
 const brushOnColor = '#17a2b8'; // info
 const lineColor = '#dc3545'; // danger
+const confColor = '#dc3545'; // danger again
 // const selectedIndices = [];
 // window.selectedIndices = selectedIndices;
 
@@ -473,7 +474,6 @@ export default {
             }
           });
           const selection = d3.event.selection;
-          console.log('at brush end callback');
           if (selection) {
             // selectedIndices = [];
             self.selectedBarMetric = ax.mName;
@@ -499,7 +499,6 @@ export default {
             });
           } else {
             // you've undone selection
-            console.log('undone selection');
             ax.svg.selectAll('.bar').each(function highlight(d, i) {
               d3.select(this).style('fill', highlightOffColor);
               self.selectedBarIndices = [];
@@ -509,7 +508,6 @@ export default {
           }
         })
         .on('end', function brushended() {
-          console.log('ending...');
           const selection = d3.event.selection;
           if (!selection) {
             ax.svg.selectAll('.bar').each(function highlight(d, i) {
@@ -621,11 +619,29 @@ export default {
         return { x, y };
       });
 
+      const confData = _.map(X, (x) => {
+        const y0 = model.t.interval95[0][0] + (model.t.interval95[1][0] * x);
+        const y = model.coef[0] + (model.coef[1] * x);
+        const y1 = model.t.interval95[0][1] + (model.t.interval95[1][1] * x);
+        return { x, y, y0, y1 };
+      });
+
+
       const line = d3.line()
         .x(function getX(d) { return ax.ax.xScale(d.x); })
         .y(function getY(d) { return ax.ax.yScale(d.y); });
 
-      if (!ax.ax.svg.select('.fit').length) {
+      const confidenceArea = d3.area()
+        .x(function getX(d) { return ax.ax.xScale(d.x); })
+        .y0(function getY0(d) {
+          return ax.ax.yScale(d.y0);
+        })
+        .y1(function getY1(d) {
+          return ax.ax.yScale(d.y1);
+        });
+
+      /* eslint no-underscore-dangle: ["error", { "allow": ["__brush", "_groups"] }] */
+      if (!ax.ax.svg.select('.fit')._groups[0][0]) {
         ax.ax.svg.append('path')
           .attr('class', 'fit')
           .attr('fill', 'none')
@@ -634,9 +650,20 @@ export default {
           .attr('stroke-linecap', 'round')
           .attr('stroke-width', 5);
       }
+      if (!ax.ax.svg.select('.fitconf')._groups[0][0]) {
+        ax.ax.svg.append('path')
+          .attr('class', 'fitconf')
+          .attr('fill', confColor)
+          .attr('opacity', 0.25)
+      }
+
       ax.ax.svg.select('.fit')
         .datum(lineData)
         .attr('d', line);
+
+      ax.ax.svg.select('.fitconf')
+        .datum(confData)
+        .attr('d', confidenceArea);
     },
     runModel() {
       this.model = jStat.models.ols(this.pointArrays.y, this.pointArrays.X);

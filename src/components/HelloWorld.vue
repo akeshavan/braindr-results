@@ -548,6 +548,18 @@ export default {
           let color = clickColor;
           if (!self.clickPointIdx) {
             self.clickPointIdx = i;
+          } else if (self.clickPointIdx !== i) {
+            ax.svg.selectAll('.dot').each(function unSet(dd, ii) {
+              if (ii === self.clickPointIdx) {
+                // fix the color
+                let color2 = highlightOffColor;
+                if (self.selectedPointIndices.indexOf(ii) >= 0) {
+                  color2 = brushOnColor;
+                }
+                d3.select(this).style('fill', color2);
+              }
+            });
+            self.clickPointIdx = i;
           } else {
             color = highlightOffColor;
             self.clickPointIdx = null;

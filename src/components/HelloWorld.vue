@@ -89,8 +89,8 @@ Vue.use(VueResize);
 
 const d3 = require('d3');
 const jStat = require('jStat').jStat;
-window.d3 = d3;
 
+window.d3 = d3;
 window.jStat = jStat;
 /* eslint func-names: ["error", "as-needed"] */
 /*
@@ -102,302 +102,8 @@ eslint no-param-reassign: ["error", { "props": true,"ignorePropertyModifications
 const highlightOnColor = '#ffc107';
 const highlightOffColor = '#6c757d';
 const brushOnColor = '#17a2b8';
-
-const resizeAxes = function (ax) {
-  d3
-    .select(ax.elem)
-    .attr('width', ax.width + ax.margin.left + ax.margin.right)
-    .attr('height', ax.height + ax.margin.top + ax.margin.bottom);
-  // ax.svg.select('.plotArea')
-
-  ax.svg.select('.x.axis.label')
-    .attr('x', ax.width / 2)
-    .call(ax.xAxis);
-};
-
-const renderAxes = function (elem, hei, wid) {
-  // define margins on the plot -- this will give room for axes labels, titles
-  const H = hei || 300;
-  const W = wid || 500;
-  const margin = { top: 20, right: 20, bottom: 30, left: 60 };
-
-  // total dimensions are 500x300
-  const width = W - margin.left - margin.right;
-  const height = H - margin.top - margin.bottom;
-
-  // value -> display
-  const xScale = d3.scaleLinear().range([0, width]);
-  const yScale = d3.scaleLinear().range([height, 0]);
-  // in SVG, y=0 is at the top, so we switch the order
-
-  const svg = d3
-    .select(elem)
-    .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom)
-    .append('g')
-    .attr('class', 'plotArea')
-    .attr('transform', `translate(${margin.left}, ${margin.top})`);
-
-  const xAxis = d3.axisBottom(xScale); // axis object
-  const yAxis = d3.axisLeft(yScale);
-
-  // x-axis
-  svg
-    .append('g')
-    .attr('class', 'x axis')
-    // take X to bottom of SVG
-    .attr('transform', `translate(0,${height})`)
-    .call(xAxis)
-    .append('text')
-    .attr('class', 'label')
-    .attr('x', width / 2)
-    .attr('y', 25)
-    .attr('font-size', '1em')
-    .style('text-anchor', 'end')
-    .style('fill', 'black')
-    .text('X');
-
-  // y-axis
-  svg
-    .append('g')
-    .attr('class', 'y axis')
-    .call(yAxis)
-    .append('text')
-    .attr('class', 'label')
-    .attr('transform', 'rotate(-90)')
-    .attr('y', -50)
-    .attr('x', -height / 2)
-    .attr('dy', '.71em')
-    .attr('font-size', '1em')
-    .style('text-anchor', 'end')
-    .style('fill', 'black')
-    .text('Y');
-
-  return {
-    svg,
-    xScale,
-    yScale,
-    xAxis,
-    yAxis,
-    height,
-    width,
-    elem,
-    margin,
-  };
-};
-
-const globalBrushes = {};
-
-const scatterPoints = function (ax, data, xName, yName, hoverOnCallback, hoverOffCallback) {
-  const xValue = function (d) {
-    return d[xName];
-  };
-  const yValue = function (d) {
-    return d[yName];
-  };
-
-  // set domain again in case data changed bounds
-  ax.xScale.domain([d3.min(data, xValue), d3.max(data, xValue)]);
-  ax.yScale.domain([d3.min(data, yValue), d3.max(data, yValue)]);
-
-  // redraw axis
-  ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text(xName);
-
-  ax.svg.selectAll('.y.axis').call(ax.yAxis).selectAll('.label').text(yName);
-
-  // add data
-  ax.svg
-    .selectAll('.dot')
-    .data(data)
-    .enter()
-    .append('circle')
-    .attr('class', 'dot');
-
-  ax.typeSelector = '.dot';
-  ax.xName = xName;
-  ax.yName = yName;
-  // update data
-  ax.svg
-    .selectAll('.dot')
-    .attr('cx', d => ax.xScale(xValue(d)))
-    .transition()
-    .duration(1000)
-    .attr('cy', d => ax.yScale(yValue(d)));
-
-  // events: when you highlight a dot, highlight the corresponding histogram bar
-  ax.svg
-    .selectAll('.dot')
-    .on('mouseover', function setColor(d, i) {
-      d3.select(this).style('fill', () => highlightOnColor);
-      hoverOnCallback(d, i);
-    })
-    .on('mouseout', function setColor(d, i) {
-      // ax.svg.selectAll('.dot').style('fill', highlightOffColor);
-      d3.select(this).style('fill', () => highlightOffColor);
-      hoverOffCallback(d, i);
-    });
-
-  // remove dots
-  ax.svg
-    .selectAll('.dot')
-    .data(data)
-    .exit()
-    .transition()
-    .duration(1000)
-    .style('opacity', 1e-6)
-    .attr('cy', () => 0)
-    .remove();
-};
-
-const barGraph = function (ax, data, xName, yName, xMin, xMax,
-  binSize, hoverOnCallback, hoverOffCallback) {
-  const xValue = function (d) {
-    return d[xName];
-  };
-  const yValue = function (d) {
-    return d[yName];
-  };
-
-  // set domain again in case data changed bounds
-  ax.xScale.domain([xMin, xMax]);
-  ax.yScale.domain([d3.min(data, yValue), d3.max(data, yValue)]);
-
-  // redraw axis
-  ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text(xName);
-
-  ax.svg.selectAll('.y.axis').call(ax.yAxis).selectAll('.label').text(yName);
-
-  ax.svg.selectAll('.bar')
-    .data(data)
-    .enter()
-    .append('rect')
-    .attr('class', 'bar');
-
-  ax.svg.selectAll('.bar')
-    .attr('x', d => ax.xScale(xValue(d)))
-    .attr('width', ax.xScale(binSize) - ax.xScale(0))
-    .attr('y', d => ax.yScale(yValue(d)))
-    .attr('height', d => ax.height - ax.yScale(yValue(d)));
-
-  ax.typeSelector = '.bar';
-  ax.xName = xName;
-  ax.yName = yName;
-
-  ax.svg.selectAll('.bar')
-    .data(data)
-    .exit()
-    .remove('rect');
-
-  ax.svg.selectAll('.bar')
-    .on('mouseover', function setColor(d, i) {
-      d3.select(this).style('fill', highlightOnColor);
-      hoverOnCallback(d, i);
-    })
-    .on('mouseout', function setColor(d, i) {
-      d3.select(this).style('fill', highlightOffColor);
-      hoverOffCallback(d, i);
-    });
-
-  /* The brush */
-  const brush = d3.brushX()
-    .extent([[0, 0], [ax.width, ax.height]])
-    .on('brush end', function brushend() {
-      d3.selectAll('.brush').each(function clearOthers() {
-        if (this.parentNode.parentNode.id !== ax.elem.replace('#', '')) {
-          /* eslint no-underscore-dangle: ["error", { "allow": ["__brush"] }] */
-          if (this.__brush.selection != null) {
-            d3.select(this).call(globalBrushes[this.parentNode.parentNode.id].move, null);
-          }
-        }
-      });
-      const selection = d3.event.selection;
-      if (selection) {
-        const extent = selection.map(ax.xScale.invert);
-        ax.svg.selectAll('.bar').each(function highlight(d, i) {
-          if ((d.x1 <= extent[1] && d.x1 > extent[0]) || (d.x0 <= extent[1] && d.x0 > extent[0])) {
-            d3.select(this).style('fill', brushOnColor);
-            hoverOnCallback(d, i);
-          } else {
-            d3.select(this).style('fill', highlightOffColor);
-            hoverOffCallback(d, i);
-          }
-        });
-      } else {
-        // you've undone selection
-        ax.svg.selectAll('.bar').each(function highlight(d, i) {
-          d3.select(this).style('fill', highlightOffColor);
-          hoverOffCallback(d, i);
-        });
-      }
-    });
-
-  if (!ax.svg.select('.brush').length) {
-    ax.svg.append('g')
-      .attr('class', 'brush')
-      .call(brush);
-    /* .call(brush.move, x.range()); */
-  }
-
-  globalBrushes[ax.elem.replace('#', '')] = brush;
-};
-
-const pointSelectorOn = function (ax, mName, points) {
-  ax.svg.selectAll(ax.typeSelector)
-    .each(function getItem(d) {
-      if (d[mName] > points.x0 && d[mName] <= points.x1) {
-        d3.select(this).style('fill', brushOnColor);
-      }
-    });
-};
-
-const pointSelectorOff = function (ax, mName, points) {
-  ax.svg.selectAll(ax.typeSelector)
-    .each(function getItem(d) {
-      if (d[mName] > points.x0 && d[mName] <= points.x1) {
-        d3.select(this).style('fill', highlightOffColor);
-      }
-    });
-};
-
-const barSelectorOn = function (ax, point) {
-  ax.svg.selectAll(ax.typeSelector)
-    .each(function getItem(d) {
-      if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
-        d3.select(this).style('fill', highlightOnColor);
-      }
-    });
-
-  d3.select('.images').selectAll('.image')
-    .data(point.braindr_images)
-    .enter()
-    .append('img')
-    .attr('class', 'image');
-
-  d3.select('.images').selectAll('.image')
-    .attr('src', d => `https://dxugxjm290185.cloudfront.net/braindr/${d}.jpg`);
-
-  d3.select('.images').selectAll('.image')
-    .data(point.braindr_images)
-    .exit()
-    .remove('img');
-};
-
-const barSelectorOff = function (ax, point) {
-  /* ax.svg.selectAll(ax.typeSelector)
-    .style('fill', '#6c757d'); */
-
-  ax.svg.selectAll(ax.typeSelector)
-    .each(function getItem(d) {
-      if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
-        d3.select(this).style('fill', highlightOffColor);
-      }
-    });
-
-  d3.select('.images').selectAll('.image')
-    .data([])
-    .exit()
-    .remove('img');
-};
+// const selectedIndices = [];
+// window.selectedIndices = selectedIndices;
 
 
 export default {
@@ -407,6 +113,8 @@ export default {
       msg: 'Brain Volume vs Age',
       data: dataset,
       brushedPoints: [],
+      globalBrushes: {},
+      selectedBarIndices: [],
       axes: {
         scatter: { data: dataset, ax: null, xName: 'age', yName: 'gray_matter', ref: 'scatter' },
         braindr: { data: null,
@@ -439,6 +147,11 @@ export default {
       },
     };
   },
+  watch: {
+    selectedBarIndices() {
+      console.log(this.selectedBarIndices);
+    },
+  },
   created() {
     this.data.forEach((val, idx) => {
       this.data[idx].age = val.metrics.Age;
@@ -447,72 +160,371 @@ export default {
   methods: {
     handleResize() {
       this.resetRange(this.axes.scatter);
-      scatterPoints(this.axes.scatter.ax, this.axes.scatter.data,
+      this.scatterPoints(this.axes.scatter.ax, this.axes.scatter.data,
         this.axes.scatter.xName, this.axes.scatter.yName,
         (p) => {
-          barSelectorOn(this.axes.braindr.ax, p);
-          barSelectorOn(this.axes.mc.ax, p);
-          barSelectorOn(this.axes.mriqc.ax, p);
+          this.barSelectorOn(this.axes.braindr.ax, p);
+          this.barSelectorOn(this.axes.mc.ax, p);
+          this.barSelectorOn(this.axes.mriqc.ax, p);
         },
         (p) => {
-          barSelectorOff(this.axes.braindr.ax, p);
-          barSelectorOff(this.axes.mc.ax, p);
-          barSelectorOff(this.axes.mriqc.ax, p);
+          this.barSelectorOff(this.axes.braindr.ax, p);
+          this.barSelectorOff(this.axes.mc.ax, p);
+          this.barSelectorOff(this.axes.mriqc.ax, p);
         });
 
       this.resetRange(this.axes.braindr);
-      barGraph(this.axes.braindr.ax, this.axes.braindr.data,
+      this.barGraph(this.axes.braindr.ax, this.axes.braindr.data,
         this.axes.braindr.xName, this.axes.braindr.yName,
         this.axes.braindr.xMin, this.axes.braindr.xMax,
         this.axes.braindr.binSize,
         (p) => {
-          pointSelectorOn(this.axes.scatter.ax, this.axes.braindr.mName, p);
+          this.pointSelectorOn(this.axes.scatter.ax, this.axes.braindr.mName, p);
         },
         (p) => {
-          pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
+          this.pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
         });
 
       this.resetRange(this.axes.mc);
-      barGraph(this.axes.mc.ax, this.axes.mc.data,
+      this.barGraph(this.axes.mc.ax, this.axes.mc.data,
         this.axes.mc.xName, this.axes.mc.yName,
         this.axes.mc.xMin, this.axes.mc.xMax, this.axes.mc.binSize,
         (p) => {
-          pointSelectorOn(this.axes.scatter.ax, this.axes.mc.mName, p);
+          this.pointSelectorOn(this.axes.scatter.ax, this.axes.mc.mName, p);
         },
         (p) => {
-          pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
+          this.pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
         });
 
       this.resetRange(this.axes.mriqc);
-      barGraph(this.axes.mriqc.ax, this.axes.mriqc.data,
+      this.barGraph(this.axes.mriqc.ax, this.axes.mriqc.data,
         this.axes.mriqc.xName, this.axes.mriqc.yName,
         this.axes.mriqc.xMin, this.axes.mriqc.xMax, this.axes.mriqc.binSize,
         (p) => {
-          pointSelectorOn(this.axes.scatter.ax, this.axes.mriqc.mName, p);
+          this.pointSelectorOn(this.axes.scatter.ax, this.axes.mriqc.mName, p);
         },
         (p) => {
-          pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
+          this.pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
         });
     },
     resetRange(axD) {
       const width = this.$refs[axD.ref].clientWidth - axD.ax.margin.left - axD.ax.margin.right;
       axD.ax.xScale.range([0, width]);
       axD.ax.width = width;
-      resizeAxes(axD.ax);
+      this.resizeAxes(axD.ax);
+    },
+    renderAxes(elem, hei, wid) {
+      // define margins on the plot -- this will give room for axes labels, titles
+      const H = hei || 300;
+      const W = wid || 500;
+      const margin = { top: 20, right: 20, bottom: 30, left: 60 };
+
+      // total dimensions are 500x300
+      const width = W - margin.left - margin.right;
+      const height = H - margin.top - margin.bottom;
+
+      // value -> display
+      const xScale = d3.scaleLinear().range([0, width]);
+      const yScale = d3.scaleLinear().range([height, 0]);
+      // in SVG, y=0 is at the top, so we switch the order
+
+      const svg = d3
+        .select(elem)
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom)
+        .append('g')
+        .attr('class', 'plotArea')
+        .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+      const xAxis = d3.axisBottom(xScale); // axis object
+      const yAxis = d3.axisLeft(yScale);
+
+      // x-axis
+      svg
+        .append('g')
+        .attr('class', 'x axis')
+        // take X to bottom of SVG
+        .attr('transform', `translate(0,${height})`)
+        .call(xAxis)
+        .append('text')
+        .attr('class', 'label')
+        .attr('x', width / 2)
+        .attr('y', 25)
+        .attr('font-size', '1em')
+        .style('text-anchor', 'end')
+        .style('fill', 'black')
+        .text('X');
+
+      // y-axis
+      svg
+        .append('g')
+        .attr('class', 'y axis')
+        .call(yAxis)
+        .append('text')
+        .attr('class', 'label')
+        .attr('transform', 'rotate(-90)')
+        .attr('y', -50)
+        .attr('x', -height / 2)
+        .attr('dy', '.71em')
+        .attr('font-size', '1em')
+        .style('text-anchor', 'end')
+        .style('fill', 'black')
+        .text('Y');
+
+      return {
+        svg,
+        xScale,
+        yScale,
+        xAxis,
+        yAxis,
+        height,
+        width,
+        elem,
+        margin,
+      };
+    },
+    scatterPoints(ax, data, xName, yName, hoverOnCallback, hoverOffCallback) {
+      const xValue = function (d) {
+        return d[xName];
+      };
+      const yValue = function (d) {
+        return d[yName];
+      };
+
+      // set domain again in case data changed bounds
+      ax.xScale.domain([d3.min(data, xValue), d3.max(data, xValue)]);
+      ax.yScale.domain([d3.min(data, yValue), d3.max(data, yValue)]);
+
+      // redraw axis
+      ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text(xName);
+
+      ax.svg.selectAll('.y.axis').call(ax.yAxis).selectAll('.label').text(yName);
+
+      // add data
+      ax.svg
+        .selectAll('.dot')
+        .data(data)
+        .enter()
+        .append('circle')
+        .attr('class', 'dot');
+
+      ax.typeSelector = '.dot';
+      ax.xName = xName;
+      ax.yName = yName;
+      // update data
+      ax.svg
+        .selectAll('.dot')
+        .attr('cx', d => ax.xScale(xValue(d)))
+        .transition()
+        .duration(1000)
+        .attr('cy', d => ax.yScale(yValue(d)));
+
+      // events: when you highlight a dot, highlight the corresponding histogram bar
+      ax.svg
+        .selectAll('.dot')
+        .on('mouseover', function setColor(d, i) {
+          d3.select(this).style('fill', () => highlightOnColor);
+          hoverOnCallback(d, i);
+        })
+        .on('mouseout', function setColor(d, i) {
+          // ax.svg.selectAll('.dot').style('fill', highlightOffColor);
+          d3.select(this).style('fill', () => highlightOffColor);
+          hoverOffCallback(d, i);
+        });
+
+      // remove dots
+      ax.svg
+        .selectAll('.dot')
+        .data(data)
+        .exit()
+        .transition()
+        .duration(1000)
+        .style('opacity', 1e-6)
+        .attr('cy', () => 0)
+        .remove();
+    },
+    barGraph(ax, data, xName, yName, xMin, xMax,
+      binSize, hoverOnCallback, hoverOffCallback) {
+      const self = this;
+      const xValue = function (d) {
+        return d[xName];
+      };
+      const yValue = function (d) {
+        return d[yName];
+      };
+
+      // set domain again in case data changed bounds
+      ax.xScale.domain([xMin, xMax]);
+      ax.yScale.domain([d3.min(data, yValue), d3.max(data, yValue)]);
+
+      // redraw axis
+      ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text(xName);
+
+      ax.svg.selectAll('.y.axis').call(ax.yAxis).selectAll('.label').text(yName);
+
+      ax.svg.selectAll('.bar')
+        .data(data)
+        .enter()
+        .append('rect')
+        .attr('class', 'bar');
+
+      ax.svg.selectAll('.bar')
+        .attr('x', d => ax.xScale(xValue(d)))
+        .attr('width', ax.xScale(binSize) - ax.xScale(0))
+        .attr('y', d => ax.yScale(yValue(d)))
+        .attr('height', d => ax.height - ax.yScale(yValue(d)));
+
+      ax.typeSelector = '.bar';
+      ax.xName = xName;
+      ax.yName = yName;
+
+      ax.svg.selectAll('.bar')
+        .data(data)
+        .exit()
+        .remove('rect');
+
+      ax.svg.selectAll('.bar')
+        .on('mouseover', function setColor(d, i) {
+          d3.select(this).style('fill', highlightOnColor);
+          hoverOnCallback(d, i);
+        })
+        .on('mouseout', function setColor(d, i) {
+          d3.select(this).style('fill', highlightOffColor);
+          hoverOffCallback(d, i);
+        });
+
+      /* The brush */
+      const brush = d3.brushX()
+        .extent([[0, 0], [ax.width, ax.height]])
+        .on('brush end', function brushend() {
+          d3.selectAll('.brush').each(function clearOthers() {
+            if (this.parentNode.parentNode.id !== ax.elem.replace('#', '')) {
+              /* eslint no-underscore-dangle: ["error", { "allow": ["__brush"] }] */
+              if (this.__brush.selection != null) {
+                d3.select(this).call(self.globalBrushes[this.parentNode.parentNode.id].move, null);
+              }
+            }
+          });
+          const selection = d3.event.selection;
+          if (selection) {
+            // selectedIndices = [];
+            const extent = selection.map(ax.xScale.invert);
+            ax.svg.selectAll('.bar').each(function highlight(d, i) {
+              if ((d.x1 <= extent[1] && d.x1 > extent[0]) ||
+                  (d.x0 <= extent[1] && d.x0 > extent[0])) {
+                d3.select(this).style('fill', brushOnColor);
+                const toadd = self.selectedBarIndices.indexOf(i);
+                if (toadd === -1) {
+                  self.selectedBarIndices.push(i);
+                }
+
+                hoverOnCallback(d, i);
+              } else {
+                d3.select(this).style('fill', highlightOffColor);
+                const toremove = self.selectedBarIndices.indexOf(i);
+                if (toremove >= 0) {
+                  self.selectedBarIndices.splice(toremove, 1);
+                }
+                hoverOffCallback(d, i);
+              }
+            });
+          } else {
+            // you've undone selection
+            ax.svg.selectAll('.bar').each(function highlight(d, i) {
+              d3.select(this).style('fill', highlightOffColor);
+              self.selectedBarIndices = [];
+              hoverOffCallback(d, i);
+            });
+          }
+        });
+
+      if (!ax.svg.select('.brush').length) {
+        ax.svg.append('g')
+          .attr('class', 'brush')
+          .call(brush);
+        /* .call(brush.move, x.range()); */
+      }
+
+      self.globalBrushes[ax.elem.replace('#', '')] = brush;
+    },
+    resizeAxes(ax) {
+      d3
+        .select(ax.elem)
+        .attr('width', ax.width + ax.margin.left + ax.margin.right)
+        .attr('height', ax.height + ax.margin.top + ax.margin.bottom);
+      // ax.svg.select('.plotArea')
+
+      ax.svg.select('.x.axis.label')
+        .attr('x', ax.width / 2)
+        .call(ax.xAxis);
+    },
+    pointSelectorOn(ax, mName, points) {
+      ax.svg.selectAll(ax.typeSelector)
+        .each(function getItem(d) {
+          if (d[mName] > points.x0 && d[mName] <= points.x1) {
+            d3.select(this).style('fill', brushOnColor);
+          }
+        });
+    },
+    pointSelectorOff(ax, mName, points) {
+      ax.svg.selectAll(ax.typeSelector)
+        .each(function getItem(d) {
+          if (d[mName] > points.x0 && d[mName] <= points.x1) {
+            d3.select(this).style('fill', highlightOffColor);
+          }
+        });
+    },
+    barSelectorOn(ax, point) {
+      ax.svg.selectAll(ax.typeSelector)
+        .each(function getItem(d) {
+          if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
+            d3.select(this).style('fill', highlightOnColor);
+          }
+        });
+
+      d3.select('.images').selectAll('.image')
+        .data(point.braindr_images)
+        .enter()
+        .append('img')
+        .attr('class', 'image');
+
+      d3.select('.images').selectAll('.image')
+        .attr('src', d => `https://dxugxjm290185.cloudfront.net/braindr/${d}.jpg`);
+
+      d3.select('.images').selectAll('.image')
+        .data(point.braindr_images)
+        .exit()
+        .remove('img');
+    },
+    barSelectorOff(ax, point) {
+      /* ax.svg.selectAll(ax.typeSelector)
+        .style('fill', '#6c757d'); */
+
+      ax.svg.selectAll(ax.typeSelector)
+        .each(function getItem(d) {
+          if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
+            d3.select(this).style('fill', highlightOffColor);
+          }
+        });
+
+      d3.select('.images').selectAll('.image')
+        .data([])
+        .exit()
+        .remove('img');
     },
   },
   mounted() {
     const W = this.$refs.scatter.clientWidth;
-    const ax = renderAxes('#scatterArea', 450, W);
+    const ax = this.renderAxes('#scatterArea', 450, W);
     this.axes.scatter.ax = ax;
 
     // console.log(this.data)
 
-    const ax2 = renderAxes('#scatterBarArea', 150, this.$refs.braindr.clientWidth);
+    const ax2 = this.renderAxes('#scatterBarArea', 150, this.$refs.braindr.clientWidth);
     this.axes.braindr.ax = ax2;
-    const ax3 = renderAxes('#scatterBarAreaMc', 150, this.$refs.mc.clientWidth);
+    const ax3 = this.renderAxes('#scatterBarAreaMc', 150, this.$refs.mc.clientWidth);
     this.axes.mc.ax = ax3;
-    const ax4 = renderAxes('#scatterBarAreaMriqc', 150, this.$refs.mriqc.clientWidth);
+    const ax4 = this.renderAxes('#scatterBarAreaMriqc', 150, this.$refs.mriqc.clientWidth);
     this.axes.mriqc.ax = ax4;
 
     const hist = d3.histogram().domain([0, 1]);
@@ -521,46 +533,46 @@ export default {
     const histDataBraindr = hist(_.map(this.data, d => d.label_3D_avg));
     this.axes.braindr.data = histDataBraindr;
     this.axes.braindr.ax.mName = this.axes.braindr.mName;
-    barGraph(ax2, histDataBraindr, 'x0', 'length', 0, 1, 0.1,
+    this.barGraph(ax2, histDataBraindr, 'x0', 'length', 0, 1, 0.1,
       (p) => {
-        pointSelectorOn(this.axes.scatter.ax, this.axes.braindr.mName, p);
+        this.pointSelectorOn(this.axes.scatter.ax, this.axes.braindr.mName, p);
       },
       (p) => {
-        pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
+        this.pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
       });
 
     const histDataMc = hist2(_.map(this.data, d => d.mc_rating));
     this.axes.mc.data = histDataMc;
     this.axes.mc.ax.mName = this.axes.mc.mName;
-    barGraph(ax3, histDataMc, 'x0', 'length', -5, 5, 1,
+    this.barGraph(ax3, histDataMc, 'x0', 'length', -5, 5, 1,
       (p) => {
-        pointSelectorOn(this.axes.scatter.ax, this.axes.mc.mName, p);
+        this.pointSelectorOn(this.axes.scatter.ax, this.axes.mc.mName, p);
       },
       (p) => {
-        pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
+        this.pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
       });
 
     const histDataMriqc = hist(_.map(this.data, d => d.mriqc_pred_xg));
     this.axes.mriqc.data = histDataMriqc;
     this.axes.mriqc.ax.mName = this.axes.mriqc.mName;
-    barGraph(ax4, histDataMriqc, 'x0', 'length', 0, 1, 0.1,
+    this.barGraph(ax4, histDataMriqc, 'x0', 'length', 0, 1, 0.1,
       (p) => {
-        pointSelectorOn(this.axes.scatter.ax, this.axes.mriqc.mName, p);
+        this.pointSelectorOn(this.axes.scatter.ax, this.axes.mriqc.mName, p);
       },
       (p) => {
-        pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
+        this.pointSelectorOff(this.axes.scatter.ax, this.axes.braindr.mName, p);
       });
 
-    scatterPoints(ax, this.data, 'age', 'gray_matter',
+    this.scatterPoints(ax, this.data, 'age', 'gray_matter',
       (p) => {
-        barSelectorOn(this.axes.braindr.ax, p);
-        barSelectorOn(this.axes.mc.ax, p);
-        barSelectorOn(this.axes.mriqc.ax, p);
+        this.barSelectorOn(this.axes.braindr.ax, p);
+        this.barSelectorOn(this.axes.mc.ax, p);
+        this.barSelectorOn(this.axes.mriqc.ax, p);
       },
       (p) => {
-        barSelectorOff(this.axes.braindr.ax, p);
-        barSelectorOff(this.axes.mc.ax, p);
-        barSelectorOff(this.axes.mriqc.ax, p);
+        this.barSelectorOff(this.axes.braindr.ax, p);
+        this.barSelectorOff(this.axes.mc.ax, p);
+        this.barSelectorOff(this.axes.mriqc.ax, p);
       });
   },
 };

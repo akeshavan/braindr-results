@@ -115,6 +115,7 @@ export default {
       brushedPoints: [],
       globalBrushes: {},
       selectedBarIndices: [],
+      selectedBarMetric: null,
       axes: {
         scatter: { data: dataset, ax: null, xName: 'age', yName: 'gray_matter', ref: 'scatter' },
         braindr: { data: null,
@@ -147,9 +148,34 @@ export default {
       },
     };
   },
-  watch: {
-    selectedBarIndices() {
-      console.log(this.selectedBarIndices);
+  computed: {
+    selectedPointIndices() {
+      if (!this.selectedBarIndices) {
+        return [];
+      }
+
+      const ax = _.filter(this.axes, v => v.mName === this.selectedBarMetric)[0];
+      if (ax) {
+        const selectedPointIndices = [];
+
+        // loop over all points in the point dataset (this.data):
+        this.data.forEach((val, idx) => {
+          // loop over all bins (ax.data)
+          ax.data.forEach((bin, bidx) => {
+            if (this.selectedBarIndices.indexOf(bidx) >= 0) {
+              // this bin is selected. Does the point live inside it?
+              if (val[this.selectedBarMetric] <= bin.x1 && val[this.selectedBarMetric] > bin.x0) {
+                // The point lives in the selected bin! append it
+                selectedPointIndices.push(idx);
+              }
+            }
+          });
+        });
+
+        return selectedPointIndices;
+      }
+
+      return [];
     },
   },
   created() {
@@ -291,6 +317,8 @@ export default {
         return d[yName];
       };
 
+      const self = this;
+
       // set domain again in case data changed bounds
       ax.xScale.domain([d3.min(data, xValue), d3.max(data, xValue)]);
       ax.yScale.domain([d3.min(data, yValue), d3.max(data, yValue)]);
@@ -328,7 +356,11 @@ export default {
         })
         .on('mouseout', function setColor(d, i) {
           // ax.svg.selectAll('.dot').style('fill', highlightOffColor);
-          d3.select(this).style('fill', () => highlightOffColor);
+          let color = highlightOffColor;
+          if (self.selectedPointIndices.indexOf(i) >= 0) {
+            color = brushOnColor;
+          }
+          d3.select(this).style('fill', color);
           hoverOffCallback(d, i);
         });
 
@@ -408,6 +440,7 @@ export default {
           const selection = d3.event.selection;
           if (selection) {
             // selectedIndices = [];
+            self.selectedBarMetric = ax.mName;
             const extent = selection.map(ax.xScale.invert);
             ax.svg.selectAll('.bar').each(function highlight(d, i) {
               if ((d.x1 <= extent[1] && d.x1 > extent[0]) ||
@@ -433,6 +466,7 @@ export default {
             ax.svg.selectAll('.bar').each(function highlight(d, i) {
               d3.select(this).style('fill', highlightOffColor);
               self.selectedBarIndices = [];
+              self.selectedBarMetric = null;
               hoverOffCallback(d, i);
             });
           }
@@ -499,11 +533,17 @@ export default {
     barSelectorOff(ax, point) {
       /* ax.svg.selectAll(ax.typeSelector)
         .style('fill', '#6c757d'); */
-
+      const self = this;
       ax.svg.selectAll(ax.typeSelector)
-        .each(function getItem(d) {
+        .each(function getItem(d, i) {
           if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
-            d3.select(this).style('fill', highlightOffColor);
+            let color = highlightOffColor;
+            if (self.selectedBarIndices.indexOf(i) >= 0) {
+              if (ax.mName === self.selectedBarMetric) {
+                color = brushOnColor;
+              }
+            }
+            d3.select(this).style('fill', color);
           }
         });
 

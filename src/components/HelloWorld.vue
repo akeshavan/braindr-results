@@ -54,7 +54,15 @@
           <div class="col-sm-12">
             <div class="chart-wrapper">
               <div class="chart-title">
-                Age vs Gray Matter Volume
+                Age vs Gray Matter Volume:
+                <br>
+                <span v-if="model.R2"> R2: {{model.adjust_R2}}</span>
+                <br>
+                <span v-if="model.t">t values: {{model.t.t}}</span>
+                <br>
+                <span v-if="model.t">coef: {{model.coef}}</span>
+                <br>
+                <span v-if="model.t">shape: {{pointArrays.X.length}}</span>
               </div>
               <div class="chart-stage" ref="scatter">
                 <svg id="scatterArea"></svg>
@@ -99,9 +107,10 @@ eslint no-param-reassign: ["error", { "props": true,"ignorePropertyModifications
 /* eslint prefer-arrow-callback: [ "error", { "allowNamedFunctions": true } ] */
 
 
-const highlightOnColor = '#ffc107';
-const highlightOffColor = '#6c757d';
-const brushOnColor = '#17a2b8';
+const highlightOnColor = '#ffc107'; // warning
+const highlightOffColor = '#6c757d'; // secondary
+const brushOnColor = '#17a2b8'; // info
+const lineColor = '#dc3545'; // danger
 // const selectedIndices = [];
 // window.selectedIndices = selectedIndices;
 
@@ -113,6 +122,7 @@ export default {
       msg: 'Brain Volume vs Age',
       data: dataset,
       brushedPoints: [],
+      model: {},
       globalBrushes: {},
       selectedBarIndices: [],
       selectedBarMetric: null,
@@ -171,11 +181,34 @@ export default {
             }
           });
         });
-
         return selectedPointIndices;
       }
 
       return [];
+    },
+    pointArrays() {
+      const xName = this.axes.scatter.xName;
+      const yName = this.axes.scatter.yName;
+      const X = [];
+      const y = [];
+      /* eslint vue/no-side-effects-in-computed-properties: 0 */
+      if (this.selectedPointIndices.length) {
+        this.selectedPointIndices.forEach((val) => {
+          const Xvec = [1, this.data[val][xName]];
+          const yvec = this.data[val][yName];
+          X.push(Xvec);
+          y.push(yvec);
+        });
+      } else {
+        this.data.forEach((val, idx) => {
+          const Xvec = [1, this.data[idx][xName]];
+          const yvec = this.data[idx][yName];
+          X.push(Xvec);
+          y.push(yvec);
+        });
+      }
+
+      return { X, y };
     },
   },
   created() {
@@ -339,6 +372,8 @@ export default {
       ax.typeSelector = '.dot';
       ax.xName = xName;
       ax.yName = yName;
+      ax.xValue = xValue;
+      ax.yValue = yValue;
       // update data
       ax.svg
         .selectAll('.dot')
@@ -438,6 +473,7 @@ export default {
             }
           });
           const selection = d3.event.selection;
+          console.log('at brush end callback');
           if (selection) {
             // selectedIndices = [];
             self.selectedBarMetric = ax.mName;
@@ -463,6 +499,7 @@ export default {
             });
           } else {
             // you've undone selection
+            console.log('undone selection');
             ax.svg.selectAll('.bar').each(function highlight(d, i) {
               d3.select(this).style('fill', highlightOffColor);
               self.selectedBarIndices = [];
@@ -470,6 +507,20 @@ export default {
               hoverOffCallback(d, i);
             });
           }
+        })
+        .on('end', function brushended() {
+          console.log('ending...');
+          const selection = d3.event.selection;
+          if (!selection) {
+            ax.svg.selectAll('.bar').each(function highlight(d, i) {
+              d3.select(this).style('fill', highlightOffColor);
+              self.selectedBarIndices = [];
+              self.selectedBarMetric = null;
+              hoverOffCallback(d, i);
+            });
+          }
+          self.runModel();
+          self.lineGraph();
         });
 
       if (!ax.svg.select('.brush').length) {
@@ -491,6 +542,8 @@ export default {
       ax.svg.select('.x.axis.label')
         .attr('x', ax.width / 2)
         .call(ax.xAxis);
+
+      this.lineGraph();
     },
     pointSelectorOn(ax, mName, points) {
       ax.svg.selectAll(ax.typeSelector)
@@ -551,6 +604,42 @@ export default {
         .data([])
         .exit()
         .remove('img');
+    },
+    lineGraph() {
+      const ax = this.axes.scatter;
+      const model = this.model;
+      const linspace = function (start, stop, nsteps) {
+        const delta = (stop - start) / (nsteps - 1);
+        return d3.range(start, stop + delta, delta).slice(0, nsteps);
+      };
+      const minD = d3.min(ax.data, ax.ax.xValue);
+      const maxD = d3.max(ax.data, ax.ax.xValue);
+
+      const X = linspace(minD, maxD, 100);
+      const lineData = _.map(X, (x) => {
+        const y = model.coef[0] + (model.coef[1] * x);
+        return { x, y };
+      });
+
+      const line = d3.line()
+        .x(function getX(d) { return ax.ax.xScale(d.x); })
+        .y(function getY(d) { return ax.ax.yScale(d.y); });
+
+      if (!ax.ax.svg.select('.fit').length) {
+        ax.ax.svg.append('path')
+          .attr('class', 'fit')
+          .attr('fill', 'none')
+          .attr('stroke', lineColor)
+          .attr('stroke-linejoin', 'round')
+          .attr('stroke-linecap', 'round')
+          .attr('stroke-width', 5);
+      }
+      ax.ax.svg.select('.fit')
+        .datum(lineData)
+        .attr('d', line);
+    },
+    runModel() {
+      this.model = jStat.models.ols(this.pointArrays.y, this.pointArrays.X);
     },
   },
   mounted() {
@@ -614,6 +703,9 @@ export default {
         this.barSelectorOff(this.axes.mc.ax, p);
         this.barSelectorOff(this.axes.mriqc.ax, p);
       });
+
+    this.runModel();
+    this.lineGraph();
   },
 };
 </script>

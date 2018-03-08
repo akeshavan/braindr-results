@@ -74,10 +74,22 @@
         <div class="row">
           <!-- Put the Images here!! -->
           <div class="text-center w-100">
-            <h5 class="mb-0 pb-0">braindr images</h5>
-            <small class="mt-0 pt-0">Hover over a point above to view slices</small>
+            <h5 class="mb-0 pb-0">
+              braindr images
+              <a class="btn btn-sm btn-outline-info"
+                v-if="clickPointIdx !== null"
+                :href="'http://mindcontrol-hbn.herokuapp.com/T1w/' + data[clickPointIdx].indi_name + '_T1w'"
+                >
+                View 3D
+              </a>
+            </h5>
+            <small class="mt-0 pt-0"
+              v-if="clickPointIdx === null">
+              Click a point above to view slices
+            </small>
+            <small v-else>Viewing: {{data[clickPointIdx].indi_name}}</small>
           </div>
-          <div class="images mx-auto"></div>
+          <div class="images mx-auto" style="min-height: 150px;"></div>
         </div>
       </div>
       <div class="col-sm-2">
@@ -551,7 +563,7 @@ export default {
             ax.svg.selectAll('.dot').each(function unSet(dd, ii) {
               if (ii === self.clickPointIdx) {
                 // fix the color
-                let color2 = highlightOffColor;
+                let color2 = 'lightgray'; // highlightOffColor;
                 if (self.selectedPointIndices.indexOf(ii) >= 0) {
                   color2 = brushOnColor;
                 }
@@ -561,7 +573,7 @@ export default {
             });
             self.clickPointIdx = i;
           } else {
-            color = highlightOffColor;
+            color = 'lightgray'; // highlightOffColor;
             swidth = 1;
             self.clickPointIdx = null;
           }
@@ -860,7 +872,7 @@ export default {
   },
   mounted() {
     const W = this.$refs.scatter.clientWidth;
-    const ax = this.renderAxes('#scatterArea', 450, W);
+    const ax = this.renderAxes('#scatterArea', 400, W);
     this.axes.scatter.ax = ax;
 
     // console.log(this.data)

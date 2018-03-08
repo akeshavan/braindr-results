@@ -304,6 +304,7 @@ const barGraph = function (ax, data, xName, yName, xMin, xMax,
     .on('brush end', function brushend() {
       d3.selectAll('.brush').each(function clearOthers() {
         if (this.parentNode.parentNode.id !== ax.elem.replace('#', '')) {
+          /* eslint no-underscore-dangle: ["error", { "allow": ["__brush"] }] */
           if (this.__brush.selection != null) {
             d3.select(this).call(globalBrushes[this.parentNode.parentNode.id].move, null);
           }

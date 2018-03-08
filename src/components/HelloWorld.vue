@@ -88,6 +88,10 @@ import dataset from '../assets/braindr_results_final-3-5-18.json';
 Vue.use(VueResize);
 
 const d3 = require('d3');
+const jStat = require('jStat').jStat;
+window.d3 = d3;
+
+window.jStat = jStat;
 /* eslint func-names: ["error", "as-needed"] */
 /*
 eslint no-param-reassign: ["error", { "props": true,"ignorePropertyModificationsFor":["ax", "axD"]}]
@@ -97,6 +101,7 @@ eslint no-param-reassign: ["error", { "props": true,"ignorePropertyModifications
 
 const highlightOnColor = '#ffc107';
 const highlightOffColor = '#6c757d';
+const brushOnColor = '#17a2b8';
 
 const resizeAxes = function (ax) {
   d3
@@ -181,6 +186,8 @@ const renderAxes = function (elem, hei, wid) {
   };
 };
 
+const globalBrushes = {};
+
 const scatterPoints = function (ax, data, xName, yName, hoverOnCallback, hoverOffCallback) {
   const xValue = function (d) {
     return d[xName];
@@ -224,8 +231,9 @@ const scatterPoints = function (ax, data, xName, yName, hoverOnCallback, hoverOf
       d3.select(this).style('fill', () => highlightOnColor);
       hoverOnCallback(d, i);
     })
-    .on('mouseout', (d, i) => {
-      ax.svg.selectAll('.dot').style('fill', highlightOffColor);
+    .on('mouseout', function setColor(d, i) {
+      // ax.svg.selectAll('.dot').style('fill', highlightOffColor);
+      d3.select(this).style('fill', () => highlightOffColor);
       hoverOffCallback(d, i);
     });
 
@@ -294,12 +302,19 @@ const barGraph = function (ax, data, xName, yName, xMin, xMax,
   const brush = d3.brushX()
     .extent([[0, 0], [ax.width, ax.height]])
     .on('brush end', function brushend() {
+      d3.selectAll('.brush').each(function clearOthers() {
+        if (this.parentNode.parentNode.id !== ax.elem.replace('#', '')) {
+          if (this.__brush.selection != null) {
+            d3.select(this).call(globalBrushes[this.parentNode.parentNode.id].move, null);
+          }
+        }
+      });
       const selection = d3.event.selection;
       if (selection) {
         const extent = selection.map(ax.xScale.invert);
         ax.svg.selectAll('.bar').each(function highlight(d, i) {
           if ((d.x1 <= extent[1] && d.x1 > extent[0]) || (d.x0 <= extent[1] && d.x0 > extent[0])) {
-            d3.select(this).style('fill', highlightOnColor);
+            d3.select(this).style('fill', brushOnColor);
             hoverOnCallback(d, i);
           } else {
             d3.select(this).style('fill', highlightOffColor);
@@ -321,13 +336,15 @@ const barGraph = function (ax, data, xName, yName, xMin, xMax,
       .call(brush);
     /* .call(brush.move, x.range()); */
   }
+
+  globalBrushes[ax.elem.replace('#', '')] = brush;
 };
 
 const pointSelectorOn = function (ax, mName, points) {
   ax.svg.selectAll(ax.typeSelector)
     .each(function getItem(d) {
       if (d[mName] > points.x0 && d[mName] <= points.x1) {
-        d3.select(this).style('fill', highlightOnColor);
+        d3.select(this).style('fill', brushOnColor);
       }
     });
 };
@@ -346,9 +363,7 @@ const barSelectorOn = function (ax, point) {
     .each(function getItem(d) {
       if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
         d3.select(this).style('fill', highlightOnColor);
-      } /* else {
-        d3.select(this).style('fill', highlightOffColor);
-      } */
+      }
     });
 
   d3.select('.images').selectAll('.image')
@@ -390,6 +405,7 @@ export default {
     return {
       msg: 'Brain Volume vs Age',
       data: dataset,
+      brushedPoints: [],
       axes: {
         scatter: { data: dataset, ax: null, xName: 'age', yName: 'gray_matter', ref: 'scatter' },
         braindr: { data: null,

@@ -1,0 +1,24 @@
+sudo: false
+language: node_js
+node_js:
+- '6.0'
+cache:
+  directories:
+  - node_modules
+branches:
+  only:
+  - master
+notifications:
+  email: false
+before_script:
+- npm prune
+script:
+- npm run build
+- npm test
+after_success:
+- bash ./scripts/deploy.sh
+env:
+  global:
+  - GH_USER: akeshavan
+  - GH_REPO: braindr-results
+  - secure: RruAunlhSwf2VDG3dq70lwOYl7yvUTjPtkR2GKnEnFCDRgVYVJg/mbeW1truB9xiJpSmcNuwCqKpyzDge8z6VAda8veu/z73EXFmtEvl7G4nLY7X3Yd2p07MLjO/578Ef0pskKyjDynmOe86OdBg3eq6CZWJliofE5SHg7IWRhxs9vSkrn6Q6VQmfYTF+UEoGF8U9yqC7PCxrBz//X1BJD1w2FPQ0mr4O4zSwxh864qU59KrZFRI9PGCtzB9A0DbrNnBvPeVxKvDPRcF8NJFOg/9wl4OvQTqJJJ+VvGUxtxuxH3W7QTxuXAp4X/BaJQP+TSPtqjYgIZ6uatHKFcxXc5qxNi6CnvuanKAiGmM+lNXi6k5rRzMLNoOlaYHiZG6QCtrftaxOgLm5lreriuVKUeM4E2AcneBsXwmYn/3UyGX72IzM0lAhWCd4jEgeNJrFLsN8wvmAdnMT8RQekA8vyLAlO4RaGMiQjdRI7DwGF8Q6h8pKdEd23tIP9b7cb1Vym6AfdR27o5zSrHTxvUWTGqN7wTyIZPsAjGBE/upc6MiE3MKC9iW19J4br6i2Xp3i6eJZlmvnwT0c1SQCBTun3rWT5migB+0SEdzl5z/3oyiJMzR/wiT6deMFca/WTDYijPylDQ2RmP2ONGCGzd8M+qGz6Jqdaf+XnjiRU17NPc=

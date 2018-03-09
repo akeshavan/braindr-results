@@ -14,7 +14,6 @@ before_script:
 - npm prune
 script:
 - npm run build
-- npm test
 after_success:
 - bash ./scripts/deploy.sh
 env:

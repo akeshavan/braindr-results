@@ -238,6 +238,7 @@
                                   size="sm"
                                   v-model="selectedPolyType"
                                   :options="polytypeOptions"
+                                  @change="plotPolyType"
                                   class="mb-0"
                                   name="radioBtnOutline" />
             </b-form-group>
@@ -455,11 +456,6 @@ export default {
           return self.getHighlightOffColor(i);
         });
 
-      this.lineGraph();
-      this.nComparisons += 1;
-    },
-    pointArrays() {
-      this.runModel();
       this.lineGraph();
       this.nComparisons += 1;
     },
@@ -1132,6 +1128,16 @@ export default {
       this.model = jStat.models.ols(this.pointArrays.y, this.pointArrays.X);
       this.modelS[0] = jStat.models.ols(this.pointArrays.y0, this.pointArrays.X0);
       this.modelS[1] = jStat.models.ols(this.pointArrays.y1, this.pointArrays.X1);
+    },
+    plotPolyType() {
+      // wait for all the things to update & then rerun model and replot
+      Vue.nextTick()
+        .then(() => {
+          // DOM updated
+          this.runModel();
+          this.lineGraph();
+          this.nComparisons += 1;
+        });
     },
   },
   mounted() {

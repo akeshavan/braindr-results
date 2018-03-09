@@ -279,9 +279,11 @@ const brushOnColor = '#17a2b8'; // info
 const lineColor = '#dc3545'; // danger
 const confColor = '#dc3545'; // danger again
 const line1Color = 'orange'; // danger
+const line1OffColor = '#ffa50280'; // light orange
 const conf1Color = 'orange'; // danger again
 const line0Color = 'purple'; // danger
 const conf0Color = 'purple'; // danger again
+const line0OffColor = '#80008080'; // light purple
 const clickColor = highlightOnColor; // '#28a745'; // success
 // const selectedIndices = [];
 // window.selectedIndices = selectedIndices;
@@ -433,6 +435,13 @@ export default {
       this.plotMetric();
     },
     selectedType() {
+      const self = this;
+      this.axes.scatter.ax.svg
+        .selectAll('.dot')
+        .style('fill', function setColor(d, i) {
+          return self.getHighlightOffColor(i);
+        });
+
       this.lineGraph();
       this.nComparisons += 1;
     },
@@ -608,18 +617,26 @@ export default {
         .duration(1000)
         .attr('cy', d => ax.yScale(yValue(d)));
 
+
+      ax.svg
+        .selectAll('.dot')
+        .style('fill', function setColor(d, i) {
+          return self.getHighlightOffColor(i);
+        });
+
+
       // events: when you highlight a dot, highlight the corresponding histogram bar
       ax.svg
         .selectAll('.dot')
         .on('mouseover', function setColor(d, i) {
-          d3.select(this).style('fill', () => highlightOnColor);
+          d3.select(this).style('fill', () => self.getHighlightOnColor(i));
           hoverOnCallback(d, i);
         })
         .on('mouseout', function setColor(d, i) {
           // ax.svg.selectAll('.dot').style('fill', highlightOffColor);
-          let color = highlightOffColor;
+          let color = self.getHighlightOffColor(i); // highlightOffColor;
           if (self.selectedPointIndices.indexOf(i) >= 0) {
-            color = brushOnColor;
+            color = self.getBrushOnColor(i);
           }
           d3.select(this).style('fill', color);
           hoverOffCallback(d, i);
@@ -635,7 +652,7 @@ export default {
                 // fix the color
                 let color2 = 'lightgray'; // highlightOffColor;
                 if (self.selectedPointIndices.indexOf(ii) >= 0) {
-                  color2 = brushOnColor;
+                  color2 = self.getBrushOnColor(ii);
                 }
                 d3.select(this).style('stroke', color2);
                 d3.select(this).style('stroke-width', 1);
@@ -704,11 +721,11 @@ export default {
 
       ax.svg.selectAll('.bar')
         .on('mouseover', function setColor(d, i) {
-          d3.select(this).style('fill', highlightOnColor);
+          d3.select(this).style('fill', self.getHighlightOnColor(i));
           hoverOnCallback(d, i);
         })
         .on('mouseout', function setColor(d, i) {
-          d3.select(this).style('fill', highlightOffColor);
+          d3.select(this).style('fill', self.getHighlightOffColor(i));
           hoverOffCallback(d, i);
         });
 
@@ -732,7 +749,7 @@ export default {
             ax.svg.selectAll('.bar').each(function highlight(d, i) {
               if ((d.x1 <= extent[1] && d.x1 > extent[0]) ||
                   (d.x0 <= extent[1] && d.x0 > extent[0])) {
-                d3.select(this).style('fill', brushOnColor);
+                d3.select(this).style('fill', brushOnColor); // self.getBrushOnColor(i));
                 const toadd = self.selectedBarIndices.indexOf(i);
                 if (toadd === -1) {
                   self.selectedBarIndices.push(i);
@@ -740,7 +757,7 @@ export default {
 
                 hoverOnCallback(d, i);
               } else {
-                d3.select(this).style('fill', highlightOffColor);
+                d3.select(this).style('fill', highlightOffColor); // self.getHighlightOffColor(i));
                 const toremove = self.selectedBarIndices.indexOf(i);
                 if (toremove >= 0) {
                   self.selectedBarIndices.splice(toremove, 1);
@@ -762,7 +779,7 @@ export default {
           const selection = d3.event.selection;
           if (!selection) {
             ax.svg.selectAll('.bar').each(function highlight(d, i) {
-              d3.select(this).style('fill', highlightOffColor);
+              d3.select(this).style('fill', self.getHighlightOffColor(i));
               self.selectedBarIndices = [];
               self.selectedBarMetric = null;
               hoverOffCallback(d, i);
@@ -796,26 +813,29 @@ export default {
       this.lineGraph();
     },
     pointSelectorOn(ax, mName, points) {
+      const self = this;
       ax.svg.selectAll(ax.typeSelector)
-        .each(function getItem(d) {
+        .each(function getItem(d, i) {
           if (d[mName] > points.x0 && d[mName] <= points.x1) {
-            d3.select(this).style('fill', brushOnColor);
+            d3.select(this).style('fill', self.getBrushOnColor(i));
           }
         });
     },
     pointSelectorOff(ax, mName, points) {
+      const self = this;
       ax.svg.selectAll(ax.typeSelector)
-        .each(function getItem(d) {
+        .each(function getItem(d, i) {
           if (d[mName] > points.x0 && d[mName] <= points.x1) {
-            d3.select(this).style('fill', highlightOffColor);
+            d3.select(this).style('fill', self.getHighlightOffColor(i));
           }
         });
     },
     barSelectorOn(ax, point) {
+      const self = this;
       ax.svg.selectAll(ax.typeSelector)
-        .each(function getItem(d) {
+        .each(function getItem(d, i) {
           if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
-            d3.select(this).style('fill', highlightOnColor);
+            d3.select(this).style('fill', self.getHighlightOnColor(i));
           }
         });
 
@@ -840,10 +860,10 @@ export default {
       ax.svg.selectAll(ax.typeSelector)
         .each(function getItem(d, i) {
           if (point[ax.mName] <= d.x1 && point[ax.mName] > d.x0) {
-            let color = highlightOffColor;
+            let color = highlightOffColor; // self.getHighlightOffColor(i);
             if (self.selectedBarIndices.indexOf(i) >= 0) {
               if (ax.mName === self.selectedBarMetric) {
-                color = brushOnColor;
+                color = brushOnColor; // self.getBrushOnColor(i);
               }
             }
             d3.select(this).style('fill', color);
@@ -1051,6 +1071,21 @@ export default {
 
       this.runModel();
       this.lineGraph();
+    },
+    getHighlightOffColor(i) {
+      if (!this.selectedType) {
+        return highlightOffColor;
+      }
+      return this.data[i].metrics.Sex ? line1OffColor : line0OffColor;
+    },
+    getHighlightOnColor() {
+      return highlightOnColor;
+    },
+    getBrushOnColor(i) {
+      if (!this.selectedType) {
+        return brushOnColor;
+      }
+      return this.data[i].metrics.Sex ? line1Color : line0Color;
     },
     runModel() {
       this.model = jStat.models.ols(this.pointArrays.y, this.pointArrays.X);

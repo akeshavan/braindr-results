@@ -399,7 +399,12 @@ export default {
       /* eslint vue/no-side-effects-in-computed-properties: 0 */
       if (this.selectedPointIndices.length) {
         this.selectedPointIndices.forEach((val) => {
-          const Xvec = [1, this.data[val][xName]];
+          let Xvec = [];
+          if (this.selectedPolyType) {
+            Xvec = [1, this.data[val][xName], this.data[val][xName] ** 2];
+          } else {
+            Xvec = [1, this.data[val][xName]];
+          }
           const yvec = this.data[val][yName];
           X.push(Xvec);
           y.push(yvec);
@@ -413,7 +418,12 @@ export default {
         });
       } else {
         this.data.forEach((val, idx) => {
-          const Xvec = [1, this.data[idx][xName]];
+          let Xvec = [];
+          if (this.selectedPolyType) {
+            Xvec = [1, this.data[idx][xName], this.data[idx][xName] ** 2];
+          } else {
+            Xvec = [1, this.data[idx][xName]];
+          }
           const yvec = this.data[idx][yName];
           X.push(Xvec);
           y.push(yvec);
@@ -445,6 +455,11 @@ export default {
           return self.getHighlightOffColor(i);
         });
 
+      this.lineGraph();
+      this.nComparisons += 1;
+    },
+    pointArrays() {
+      this.runModel();
       this.lineGraph();
       this.nComparisons += 1;
     },
@@ -886,6 +901,7 @@ export default {
     lineGraph() {
       const ax = this.axes.scatter;
       const model = this.model;
+
       const modelS = this.modelS;
       const self = this;
       const linspace = function (start, stop, nsteps) {
@@ -896,40 +912,59 @@ export default {
       const maxD = d3.max(ax.data, ax.ax.xValue);
 
       const X = linspace(minD, maxD, 100);
+
+      // The single group lines & confs
       const lineData = _.map(X, (x) => {
-        const y = model.coef[0] + (model.coef[1] * x);
+        let y = model.coef[0] + (model.coef[1] * x);
+        if (self.selectedPolyType) {
+          y += model.coef[2] * (x ** 2);
+        }
         return { x, y };
       });
-
       const confData = _.map(X, (x) => {
-        const y0 = model.t.interval95[0][0] + (model.t.interval95[1][0] * x);
-        const y = model.coef[0] + (model.coef[1] * x);
-        const y1 = model.t.interval95[0][1] + (model.t.interval95[1][1] * x);
-        return { x, y, y0, y1 };
+        let y0 = model.t.interval95[0][0] + (model.t.interval95[1][0] * x);
+        let y1 = model.t.interval95[0][1] + (model.t.interval95[1][1] * x);
+        if (self.selectedPolyType) {
+          y0 += model.t.interval95[2][0] * (x ** 2);
+          y1 += model.t.interval95[2][1] * (x ** 2);
+        }
+        return { x, y0, y1 };
       });
 
+      // group0's lines & confs
       const lineData0 = _.map(X, (x) => {
-        const y = modelS[0].coef[0] + (modelS[0].coef[1] * x);
+        let y = modelS[0].coef[0] + (modelS[0].coef[1] * x);
+        if (self.selectedPolyType) {
+          y += modelS[0].coef[2] * (x ** 2);
+        }
         return { x, y };
       });
-
       const confData0 = _.map(X, (x) => {
-        const y0 = modelS[0].t.interval95[0][0] + (modelS[0].t.interval95[1][0] * x);
-        const y = modelS[0].coef[0] + (modelS[0].coef[1] * x);
-        const y1 = modelS[0].t.interval95[0][1] + (modelS[0].t.interval95[1][1] * x);
-        return { x, y, y0, y1 };
+        let y0 = modelS[0].t.interval95[0][0] + (modelS[0].t.interval95[1][0] * x);
+        let y1 = modelS[0].t.interval95[0][1] + (modelS[0].t.interval95[1][1] * x);
+        if (self.selectedPolyType) {
+          y0 += modelS[0].t.interval95[2][0] * (x ** 2);
+          y1 += modelS[0].t.interval95[2][1] * (x ** 2);
+        }
+        return { x, y0, y1 };
       });
 
+      // group1's lines & confs
       const lineData1 = _.map(X, (x) => {
-        const y = modelS[1].coef[0] + (modelS[1].coef[1] * x);
+        let y = modelS[1].coef[0] + (modelS[1].coef[1] * x);
+        if (self.selectedPolyType) {
+          y += modelS[1].coef[2] * (x ** 2);
+        }
         return { x, y };
       });
-
       const confData1 = _.map(X, (x) => {
-        const y0 = modelS[1].t.interval95[0][0] + (modelS[1].t.interval95[1][0] * x);
-        const y = modelS[1].coef[0] + (modelS[1].coef[1] * x);
-        const y1 = modelS[1].t.interval95[0][1] + (modelS[1].t.interval95[1][1] * x);
-        return { x, y, y0, y1 };
+        let y0 = modelS[1].t.interval95[0][0] + (modelS[1].t.interval95[1][0] * x);
+        let y1 = modelS[1].t.interval95[0][1] + (modelS[1].t.interval95[1][1] * x);
+        if (self.selectedPolyType) {
+          y0 += modelS[1].t.interval95[2][0] * (x ** 2);
+          y1 += modelS[1].t.interval95[2][1] * (x ** 2);
+        }
+        return { x, y0, y1 };
       });
 
       const line = d3.line()

@@ -439,6 +439,9 @@ export default {
       this.axes.scatter.ax.svg
         .selectAll('.dot')
         .style('fill', function setColor(d, i) {
+          if (self.selectedPointIndices.indexOf(i) >= 0) {
+            return self.getBrushOnColor(i);
+          }
           return self.getHighlightOffColor(i);
         });
 
@@ -621,6 +624,9 @@ export default {
       ax.svg
         .selectAll('.dot')
         .style('fill', function setColor(d, i) {
+          if (self.selectedPointIndices.indexOf(i) >= 0) {
+            return self.getBrushOnColor(i);
+          }
           return self.getHighlightOffColor(i);
         });
 
@@ -779,7 +785,7 @@ export default {
           const selection = d3.event.selection;
           if (!selection) {
             ax.svg.selectAll('.bar').each(function highlight(d, i) {
-              d3.select(this).style('fill', self.getHighlightOffColor(i));
+              d3.select(this).style('fill', highlightOffColor);
               self.selectedBarIndices = [];
               self.selectedBarMetric = null;
               hoverOffCallback(d, i);

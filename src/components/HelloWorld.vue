@@ -103,17 +103,31 @@
         </div>
         <!-- R2 -->
         <div class="row mb-3">
-          <div class="col-sm-12">
+          <div class="col-sm-12" v-if="!selectedType">
             <h4 v-if="model.R2" class="mb-0 pb-0"> {{model.R2 | formatNumber}} </h4>
+            <span > R<sup>2</sup> </span>
+          </div>
+          <div class="col-sm-12" v-else>
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              <span class="s0">{{modelS[0].R2 | formatNumber}}</span>,
+              <span class="s1">{{modelS[1].R2 | formatNumber}} </span>
+            </h4>
             <span > R<sup>2</sup> </span>
           </div>
         </div>
 
         <!-- Coef age-->
         <div class="row mb-3">
-          <div class="col-sm-12">
+          <div class="col-sm-12" v-if="!selectedType">
             <h4 v-if="model.R2" class="mb-0 pb-0">
               {{model.coef[1] | formatNumber}}
+            </h4>
+            <span > Age Coefficient (mm<sup>3</sup>/yr) </span>
+          </div>
+          <div class="col-sm-12" v-else>
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              <span class="s0">{{modelS[0].coef[1] | formatNumber}}</span>,
+              <span class="s1">{{modelS[1].coef[1] | formatNumber}} </span>
             </h4>
             <span > Age Coefficient (mm<sup>3</sup>/yr) </span>
           </div>
@@ -121,9 +135,16 @@
 
         <!-- T age-->
         <div class="row mb-3">
-          <div class="col-sm-12">
+          <div class="col-sm-12" v-if="!selectedType">
             <h4 v-if="model.R2" class="mb-0 pb-0">
               {{model.t.t[1] | formatNumber}}
+            </h4>
+            <span > t(Age) </span>
+          </div>
+          <div class="col-sm-12" v-else>
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              <span class="s0">{{modelS[0].t.t[1] | formatNumber}}</span>,
+              <span class="s1">{{modelS[1].t.t[1] | formatNumber}} </span>
             </h4>
             <span > t(Age) </span>
           </div>
@@ -131,20 +152,34 @@
 
         <!-- Coef intercept-->
         <div class="row mb-3">
-          <div class="col-sm-12">
+          <div class="col-sm-12" v-if="!selectedType">
             <h4 v-if="model.R2" class="mb-0 pb-0">
               {{model.coef[0] | formatNumber}}
             </h4>
             <span > Intercept (mm<sup>3</sup>) </span>
+          </div>
+          <div class="col-sm-12" v-else>
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              <span class="s0">{{modelS[0].coef[0] | formatNumber}}</span>,
+              <span class="s1">{{modelS[1].coef[0] | formatNumber}} </span>
+            </h4>
+            <span > t(Age) </span>
           </div>
         </div>
 
 
         <!-- T intercept-->
         <div class="row mb-3">
-          <div class="col-sm-12">
+          <div class="col-sm-12" v-if="!selectedType">
             <h4 v-if="model.R2" class="mb-0 pb-0">
               {{model.t.t[0] | formatNumber}}
+            </h4>
+            <span > t(Intercept) </span>
+          </div>
+          <div class="col-sm-12" v-else>
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              <span class="s0">{{modelS[0].t.t[0] | formatNumber}}</span>,
+              <span class="s1">{{modelS[1].t.t[0] | formatNumber}} </span>
             </h4>
             <span > t(Intercept) </span>
           </div>
@@ -152,9 +187,16 @@
 
         <!-- p(Age)-->
         <div class="row mb-3">
-          <div class="col-sm-12">
+          <div class="col-sm-12" v-if="!selectedType">
             <h4 v-if="model.R2" class="mb-0 pb-0">
               {{model.t.p[1] | formatNumber1}}
+            </h4>
+            <span > p(Age) </span>
+          </div>
+          <div class="col-sm-12" v-else>
+            <h4 v-if="model.R2" class="mb-0 pb-0">
+              <span class="s0">{{modelS[0].t.p[1] | formatNumber1}}</span>,
+              <span class="s1">{{modelS[1].t.p[1] | formatNumber1}} </span>
             </h4>
             <span > p(Age) </span>
           </div>
@@ -236,6 +278,10 @@ const highlightOffColor = '#6c757d'; // secondary
 const brushOnColor = '#17a2b8'; // info
 const lineColor = '#dc3545'; // danger
 const confColor = '#dc3545'; // danger again
+const line1Color = 'orange'; // danger
+const conf1Color = 'orange'; // danger again
+const line0Color = 'purple'; // danger
+const conf0Color = 'purple'; // danger again
 const clickColor = highlightOnColor; // '#28a745'; // success
 // const selectedIndices = [];
 // window.selectedIndices = selectedIndices;
@@ -251,18 +297,20 @@ export default {
       model: {},
       nComparisons: 1,
       globalBrushes: {},
-      metricOptions: [{
-        value: 'gray_matter',
-        text: 'gray matter',
-      },
-      {
-        value: 'white_matter',
-        text: 'white matter',
-      },
-      {
-        value: 'csf',
-        text: 'CSF',
-      },
+      modelS: {},
+      metricOptions: [
+        {
+          value: 'gray_matter',
+          text: 'gray matter',
+        },
+        {
+          value: 'white_matter',
+          text: 'white matter',
+        },
+        {
+          value: 'csf',
+          text: 'CSF',
+        },
       ],
       selectedType: false,
       typeOptions: [
@@ -342,6 +390,10 @@ export default {
       const yName = this.axes.scatter.yName;
       const X = [];
       const y = [];
+      const X0 = [];
+      const y0 = [];
+      const X1 = [];
+      const y1 = [];
       /* eslint vue/no-side-effects-in-computed-properties: 0 */
       if (this.selectedPointIndices.length) {
         this.selectedPointIndices.forEach((val) => {
@@ -349,6 +401,13 @@ export default {
           const yvec = this.data[val][yName];
           X.push(Xvec);
           y.push(yvec);
+          if (this.data[val].metrics.Sex) {
+            X1.push(Xvec);
+            y1.push(yvec);
+          } else {
+            X0.push(Xvec);
+            y0.push(yvec);
+          }
         });
       } else {
         this.data.forEach((val, idx) => {
@@ -356,15 +415,26 @@ export default {
           const yvec = this.data[idx][yName];
           X.push(Xvec);
           y.push(yvec);
+          if (this.data[idx].metrics.Sex) {
+            X1.push(Xvec);
+            y1.push(yvec);
+          } else {
+            X0.push(Xvec);
+            y0.push(yvec);
+          }
         });
       }
 
-      return { X, y };
+      return { X, y, X0, y0, X1, y1 };
     },
   },
   watch: {
     'axes.scatter.yName': function replot() {
       this.plotMetric();
+    },
+    selectedType() {
+      this.lineGraph();
+      this.nComparisons += 1;
     },
   },
   created() {
@@ -790,6 +860,8 @@ export default {
     lineGraph() {
       const ax = this.axes.scatter;
       const model = this.model;
+      const modelS = this.modelS;
+      const self = this;
       const linspace = function (start, stop, nsteps) {
         const delta = (stop - start) / (nsteps - 1);
         return d3.range(start, stop + delta, delta).slice(0, nsteps);
@@ -810,6 +882,29 @@ export default {
         return { x, y, y0, y1 };
       });
 
+      const lineData0 = _.map(X, (x) => {
+        const y = modelS[0].coef[0] + (modelS[0].coef[1] * x);
+        return { x, y };
+      });
+
+      const confData0 = _.map(X, (x) => {
+        const y0 = modelS[0].t.interval95[0][0] + (modelS[0].t.interval95[1][0] * x);
+        const y = modelS[0].coef[0] + (modelS[0].coef[1] * x);
+        const y1 = modelS[0].t.interval95[0][1] + (modelS[0].t.interval95[1][1] * x);
+        return { x, y, y0, y1 };
+      });
+
+      const lineData1 = _.map(X, (x) => {
+        const y = modelS[1].coef[0] + (modelS[1].coef[1] * x);
+        return { x, y };
+      });
+
+      const confData1 = _.map(X, (x) => {
+        const y0 = modelS[1].t.interval95[0][0] + (modelS[1].t.interval95[1][0] * x);
+        const y = modelS[1].coef[0] + (modelS[1].coef[1] * x);
+        const y1 = modelS[1].t.interval95[0][1] + (modelS[1].t.interval95[1][1] * x);
+        return { x, y, y0, y1 };
+      });
 
       const line = d3.line()
         .x(function getX(d) { return ax.ax.xScale(d.x); })
@@ -834,12 +929,43 @@ export default {
           .attr('stroke-linecap', 'round')
           .attr('stroke-width', 5);
       }
+      if (!ax.ax.svg.select('.fit1')._groups[0][0]) {
+        ax.ax.svg.append('path')
+          .attr('class', 'fit1')
+          .attr('fill', 'none')
+          .attr('stroke', line1Color)
+          .attr('stroke-linejoin', 'round')
+          .attr('stroke-linecap', 'round')
+          .attr('stroke-width', 5);
+      }
+      if (!ax.ax.svg.select('.fit0')._groups[0][0]) {
+        ax.ax.svg.append('path')
+          .attr('class', 'fit0')
+          .attr('fill', 'none')
+          .attr('stroke', line0Color)
+          .attr('stroke-linejoin', 'round')
+          .attr('stroke-linecap', 'round')
+          .attr('stroke-width', 5);
+      }
       if (!ax.ax.svg.select('.fitconf')._groups[0][0]) {
         ax.ax.svg.append('path')
           .attr('class', 'fitconf')
           .attr('fill', confColor)
           .attr('opacity', 0.25);
       }
+      if (!ax.ax.svg.select('.fitconf0')._groups[0][0]) {
+        ax.ax.svg.append('path')
+          .attr('class', 'fitconf0')
+          .attr('fill', conf0Color)
+          .attr('opacity', 0.25);
+      }
+      if (!ax.ax.svg.select('.fitconf1')._groups[0][0]) {
+        ax.ax.svg.append('path')
+          .attr('class', 'fitconf1')
+          .attr('fill', conf1Color)
+          .attr('opacity', 0.25);
+      }
+
 
       ax.ax.svg.select('.fit')
         .datum(lineData)
@@ -848,6 +974,66 @@ export default {
       ax.ax.svg.select('.fitconf')
         .datum(confData)
         .attr('d', confidenceArea);
+
+      ax.ax.svg.select('.fit0')
+        .datum(lineData0)
+        .attr('d', line);
+
+      ax.ax.svg.select('.fitconf0')
+        .datum(confData0)
+        .attr('d', confidenceArea);
+
+      ax.ax.svg.select('.fit1')
+        .datum(lineData1)
+        .attr('d', line);
+
+      ax.ax.svg.select('.fitconf1')
+        .datum(confData1)
+        .attr('d', confidenceArea);
+
+      // now just hide the ones we don't want to see.
+
+      if (self.selectedType) {
+        // split by sex is true. hide the main line.
+        ax.ax.svg.select('.fit')
+          .attr('opacity', 0);
+
+        ax.ax.svg.select('.fitconf')
+          .attr('opacity', 0);
+
+        // make sure the other ones are visible
+        ax.ax.svg.select('.fit0')
+          .attr('opacity', 1);
+
+        ax.ax.svg.select('.fitconf0')
+          .attr('opacity', 0.25);
+
+        ax.ax.svg.select('.fit1')
+          .attr('opacity', 1);
+
+        ax.ax.svg.select('.fitconf1')
+          .attr('opacity', 0.25);
+      } else {
+        // split by sex is false. hide the other lines.
+        ax.ax.svg.select('.fit')
+          .attr('opacity', 1);
+
+        ax.ax.svg.select('.fitconf')
+          .attr('opacity', 0.25);
+
+        // make sure the other ones are visible
+        ax.ax.svg.select('.fit0')
+          .attr('opacity', 0);
+
+        ax.ax.svg.select('.fitconf0')
+          .attr('opacity', 0);
+
+        ax.ax.svg.select('.fit1')
+          .attr('opacity', 0);
+
+        ax.ax.svg.select('.fitconf1')
+          .attr('opacity', 0);
+      }
     },
     plotMetric() {
       this.scatterPoints(this.axes.scatter.ax, this.data,
@@ -868,6 +1054,8 @@ export default {
     },
     runModel() {
       this.model = jStat.models.ols(this.pointArrays.y, this.pointArrays.X);
+      this.modelS[0] = jStat.models.ols(this.pointArrays.y0, this.pointArrays.X0);
+      this.modelS[1] = jStat.models.ols(this.pointArrays.y1, this.pointArrays.X1);
     },
   },
   mounted() {
@@ -963,6 +1151,14 @@ export default {
 
 h5 {
   font-weight: 300;
+}
+
+.s0 {
+  color: purple;
+}
+
+.s1 {
+  color: orange;
 }
 
 </style>

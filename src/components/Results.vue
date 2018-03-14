@@ -15,7 +15,9 @@
         Nam massa ligula, consequat sit amet nulla sit amet, tristique ultrices metus.
       </p>
       <div class="mx-auto mb-3 pb-3 mt-3 pt-3">
-        <img src="../assets/diagram.svg" class="w-50 mx-auto d-block"/>
+        <div class="w-50 mx-auto d-block">
+          <diagram></diagram>
+        </div>
         <div class="row">
           <div class="col-sm-8 offset-sm-2">
             <strong>Figure 1:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -65,6 +67,7 @@
 
 <script>
 import Figure9 from './Figure9';
+import Diagram from './Diagram';
 
 export default {
   name: 'results',
@@ -81,6 +84,7 @@ export default {
   },
   components: {
     Figure9,
+    Diagram,
   },
 };
 </script>

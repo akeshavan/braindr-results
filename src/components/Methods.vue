@@ -76,6 +76,20 @@
 
     <xgboost></xgboost>
 
+    <p class="mt-3 mb-3 pt-3 pb-3">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Nullam a eros sit amet turpis laoreet eleifend sed in nisi.
+      Proin facilisis dui non ullamcorper lobortis. Nunc eu eleifend mi.
+      Aliquam arcu lectus, ultricies non sodales vitae, ultrices nec ex.
+      Proin eros nisl, cursus eu risus ut, iaculis blandit nunc.
+      Cras vestibulum tincidunt faucibus.
+      Nam maximus id lectus et mollis.
+      Maecenas sit amet nibh tincidunt, placerat diam id, placerat massa.
+      Nulla dictum ultricies quam vel sagittis. Sed at pharetra lorem.
+      Nam massa ligula, consequat sit amet nulla sit amet, tristique ultrices metus.
+    </p>
+
+    <vggresults></vggresults>
     </b-container>
   </div>
 </template>
@@ -87,6 +101,7 @@
 import MCDist from './MindcontrolDistribution';
 import BDRDist from './BraindrDistribution';
 import XGBoost from './XGBoost';
+import VGGResults from './VggResults';
 
 export default {
   name: 'methods',
@@ -105,6 +120,7 @@ export default {
     mcdist: MCDist,
     bdrdist: BDRDist,
     xgboost: XGBoost,
+    vggresults: VGGResults,
   },
 };
 </script>

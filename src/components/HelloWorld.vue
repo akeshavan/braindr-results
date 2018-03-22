@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" ref="main">
+  <div class="container-fluid fig9" ref="main">
     <resize-observer @notify="handleResize" />
     <div class="row">
       <div class="col-sm-3">
@@ -13,7 +13,7 @@
                 <svg id="scatterBarArea"></svg>
               </div>
               <div class="chart-notes mb-3">
-                Notes about this braindr
+                Aggregate braindr ratings from 0(fail) to 1(pass)
               </div>
             </div>
           </div>
@@ -28,7 +28,7 @@
                 <svg id="scatterBarAreaMc"></svg>
               </div>
               <div class="chart-notes mb-3">
-                Notes about this mc
+                Mindcontrol ratings from -5 (fail) to 5(pass)
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
                 <svg id="scatterBarAreaMriqc"></svg>
               </div>
               <div class="chart-notes">
-                Notes about this mriqc
+                Aggregate MRIQC ratings from 0(fail) to 1(pass)
               </div>
             </div>
           </div>
@@ -91,6 +91,9 @@
           </div>
           <div class="images mx-auto" style="min-height: 150px;"></div>
         </div>
+          <div class="row">
+
+          </div>
       </div>
       <div class="col-sm-2">
 
@@ -256,7 +259,7 @@ import 'vue-resize/dist/vue-resize.css';
 import Vue from 'vue';
 import VueResize from 'vue-resize';
 import numeral from 'numeral';
-import dataset from '../assets/braindr_results_final-3-5-18.json';
+import dataset from '../assets/braindr_results_final-3-14-18.json';
 
 Vue.use(VueResize);
 Vue.filter('formatNumber', value => numeral(value).format('0.0[0]'));
@@ -314,6 +317,10 @@ export default {
           value: 'csf',
           text: 'CSF',
         },
+        {
+          value: 'total_brain_volume',
+          text: 'total_brain_volume',
+        },
       ],
       selectedType: false,
       typeOptions: [
@@ -325,7 +332,7 @@ export default {
         { text: 'Off', value: false },
         { text: 'On', value: true },
       ],
-      clickPointIdx: null,
+      clickPointIdx: 0,
       selectedBarIndices: [],
       selectedBarMetric: null,
       axes: {
@@ -443,6 +450,7 @@ export default {
   },
   watch: {
     'axes.scatter.yName': function replot() {
+      this.nComparisons += 1;
       this.plotMetric();
     },
     selectedType() {
@@ -463,6 +471,7 @@ export default {
   created() {
     this.data.forEach((val, idx) => {
       this.data[idx].age = val.metrics.Age;
+      this.data[idx].total_brain_volume = val.white_matter + val.gray_matter;
     });
   },
   methods: {
@@ -544,8 +553,8 @@ export default {
         .attr('class', 'plotArea')
         .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-      const xAxis = d3.axisBottom(xScale); // axis object
-      const yAxis = d3.axisLeft(yScale);
+      const xAxis = d3.axisBottom(xScale).tickSizeOuter(0); // axis object
+      const yAxis = d3.axisLeft(yScale).ticks(5).tickSizeOuter(0);
 
       // x-axis
       svg
@@ -708,7 +717,7 @@ export default {
 
       // set domain again in case data changed bounds
       ax.xScale.domain([xMin, xMax]);
-      ax.yScale.domain([d3.min(data, yValue), d3.max(data, yValue)]);
+      ax.yScale.domain([Math.min(0, d3.min(data, yValue)), d3.max(data, yValue)]);
 
       // redraw axis
       ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text(xName);
@@ -1028,25 +1037,25 @@ export default {
         .datum(lineData)
         .attr('d', line);
 
-      ax.ax.svg.select('.fitconf')
+      /* ax.ax.svg.select('.fitconf')
         .datum(confData)
-        .attr('d', confidenceArea);
+        .attr('d', confidenceArea); */
 
       ax.ax.svg.select('.fit0')
         .datum(lineData0)
         .attr('d', line);
 
-      ax.ax.svg.select('.fitconf0')
+      /* ax.ax.svg.select('.fitconf0')
         .datum(confData0)
-        .attr('d', confidenceArea);
+        .attr('d', confidenceArea); */
 
       ax.ax.svg.select('.fit1')
         .datum(lineData1)
         .attr('d', line);
 
-      ax.ax.svg.select('.fitconf1')
+      /* ax.ax.svg.select('.fitconf1')
         .datum(confData1)
-        .attr('d', confidenceArea);
+        .attr('d', confidenceArea); */
 
       // now just hide the ones we don't want to see.
 
@@ -1241,6 +1250,16 @@ h5 {
 
 .s1 {
   color: orange;
+}
+
+.fig9 {
+  max-width: 100%;
+}
+
+.images {
+  max-height: 150px;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 
 </style>

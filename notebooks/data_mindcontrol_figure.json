@@ -1,0 +1,5798 @@
+{
+    "average_rating": [
+        {
+            "name": "sub-NDARAA075AMK_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARAA536PTU_T1w",
+            "score": 4.25
+        },
+        {
+            "name": "sub-NDARAA948VFH_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARAC853DTE_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARAC904DMU_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARAD481FXF_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARAE012DGA_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARAE199TDD_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARAG340ERT_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARAH948UF0_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARAJ366ZFA_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARAK187ZLP_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARAM277WZT_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARAM675UR8_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARAN814UPR_T1w",
+            "score": -2.5
+        },
+        {
+            "name": "sub-NDARAP176AD1_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARAP782TVC_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARAR025WX4_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARAT100AEQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARAT299YRR_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARAT581NDH_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARAV610EY3_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARAV747WVL_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARAV894XWD_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARAV945MCQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARAW179AYF_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARAY238DFL_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARBA507GCT_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARBA521RA8_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARBA680RFY_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARBB854DRN_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARBC580HR5_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARBC734UVY_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARBE123PWH_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARBE641DGZ_T1w",
+            "score": -0.5
+        },
+        {
+            "name": "sub-NDARBF176LPM_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARBF805EHN_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARBG574KF4_T1w",
+            "score": 2.5
+        },
+        {
+            "name": "sub-NDARBG702FED_T1w",
+            "score": 4.333333333333333
+        },
+        {
+            "name": "sub-NDARBJ159HXB_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARBK082PDD_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARBK669XJQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARBM173BJG_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARBM213BEA_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARBM839WR5_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARBN100LCD_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARBR740NKV_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARBU112XZE_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARBU607ZZ3_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARBV364MBC_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARBV680AA8_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARBX121UM9_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARBX400RTC_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARBX974XDR_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARBZ216FW8_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARCA153NKE_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARCA186WGH_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARCA789EE0_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARCB959FY4_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARCD401HGZ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARCE353XKH_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARCE721YB5_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARCG073GZ6_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARCG984YXZ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARCH881EFG_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARCJ007GF8_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARCJ170CT9_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARCJ363KLE_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARCJ475WJP_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARCK647MU6_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARCL016NHB_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARCL080RHP_T1w",
+            "score": 2.3333333333333335
+        },
+        {
+            "name": "sub-NDARCL105LUE_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARCL590LPD_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARCM135DVC_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARCM302VJ1_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARCN669XPR_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARCP360AFD_T1w",
+            "score": 2.5
+        },
+        {
+            "name": "sub-NDARCR499NE4_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARCT933HF2_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARCU118LMX_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARCU417HRA_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARCU865PBV_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARCV412MDW_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARCV944JA6_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARCW071AU5_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARCW094JCG_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARCW419GBD_T1w",
+            "score": 0.6666666666666666
+        },
+        {
+            "name": "sub-NDARCW611MK5_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARCW933FD5_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARCW963FP9_T1w",
+            "score": -3.5
+        },
+        {
+            "name": "sub-NDARCX053GU5_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARCZ770BRG_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARCZ947WU5_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARDA695XTL_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARDB146NWY_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARDB804YHE_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARDC360DGB_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARDC704GKW_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARDD531EP2_T1w",
+            "score": 0.5
+        },
+        {
+            "name": "sub-NDARDF373ZDW_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARDH270YR5_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARDH328DR9_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARDJ825GBP_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARDK983BDA_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARDL511UND_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARDM425CG2_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARDN702GXX_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARDN770HY6_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARDP786HE6_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARDR067YMC_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARDR658DRA_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARDT528ZZJ_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARDT800YVF_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARDU799BZF_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARDU986RBM_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARDW416KWZ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARDX469TC1_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARDX561MRY_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARDX770PJK_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARDY150ZP9_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARDZ010EDH_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARDZ058NZN_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARDZ946KVL_T1w",
+            "score": 0.5
+        },
+        {
+            "name": "sub-NDAREB290UCN_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREC182WW2_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREC964CRA_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARED047DTH_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARED632KNG_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDAREE196FEG_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDAREF057VX5_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDAREF164ZUJ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREF893ZM8_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREG561ML5_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREH074NG8_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDAREK375DKR_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREK544ENR_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDAREK801BPB_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDAREK918EC2_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDAREK947FYP_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDAREL063PMX_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDAREM018TJQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREM141CKP_T1w",
+            "score": 0.5
+        },
+        {
+            "name": "sub-NDAREM731BYM_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREN519BLJ_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARET550NXC_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARET653TAM_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARET949LMU_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDAREU211JMY_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREV527ZRF_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDAREV601CE7_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDAREX091KUR_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDAREY778CR9_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDAREY962BM7_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDAREZ098ZPE_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARFA464HJQ_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARFA860RPD_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARFB107PVH_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARFB500HHN_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARFB908HVX_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARFD822TY5_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARFE163HVN_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARFH674DWX_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARFK477WX9_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARFK610GY5_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARFL411AT1_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARFM080VAF_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARFN452VPC_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARFR108JNB_T1w",
+            "score": -3.5
+        },
+        {
+            "name": "sub-NDARFR109LKT_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARFT834NT1_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARFU789PRX_T1w",
+            "score": 3.75
+        },
+        {
+            "name": "sub-NDARFW130NGG_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARFW292PBD_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARFW444PN1_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARFW972KFQ_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARFY009MNL_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARFY612EMR_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARFZ296UNG_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARGA056TMW_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARGA967MGC_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARGB040MGR_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARGB441VVD_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARGD507TDZ_T1w",
+            "score": -4.333333333333333
+        },
+        {
+            "name": "sub-NDARGE366WNC_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARGE536BGD_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARGE946RCB_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARGG205WVN_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARGH407KVG_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARGH775KF5_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARGJ395FKP_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARGK736HF4_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARGL800LDW_T1w",
+            "score": 4.625
+        },
+        {
+            "name": "sub-NDARGL834CMQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARGL963HU4_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARGM498YFL_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARGM540EV8_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARGM610LF0_T1w",
+            "score": -3.5
+        },
+        {
+            "name": "sub-NDARGR661YZG_T1w",
+            "score": 0.16666666666666669
+        },
+        {
+            "name": "sub-NDARGT022BEW_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARGT267UZR_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARGT551AFK_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARGT682ZWN_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARGU100JH4_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARGU485JJA_T1w",
+            "score": 1.5
+        },
+        {
+            "name": "sub-NDARGU667MCK_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARGU729WUR_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARGV781AMW_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARGW404GJL_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARGY054ENV_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARGY148EVU_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARGY622NG6_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARGZ038DRL_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARHA387FPM_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARHB764VZ2_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARHB781DD8_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARHB993EV0_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARHC737MHK_T1w",
+            "score": 0.5
+        },
+        {
+            "name": "sub-NDARHD059PEQ_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARHD507TEF_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARHE236YLB_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARHF023VG3_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARHF351AA6_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARHF904CWB_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARHG152GZC_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARHJ034LDM_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARHJ126UW2_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARHJ523XGB_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARHJ945PV0_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARHJ946UPH_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARHK598YJC_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARHL164JHH_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARHL238VL2_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARHL358LGQ_T1w",
+            "score": 0.25
+        },
+        {
+            "name": "sub-NDARHM273AXL_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARHM304AXP_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARHM421JUP_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARHM615PJH_T1w",
+            "score": 1.5
+        },
+        {
+            "name": "sub-NDARHN158DC6_T1w",
+            "score": -0.5
+        },
+        {
+            "name": "sub-NDARHN749RW4_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARHP176DPE_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARHP558MGA_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARHP656DLC_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARHP924ZHW_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARHR753ZKU_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARHR944BBY_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARHT218GFA_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARHU391FD7_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARHV527DNK_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARHW216PER_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARHW718DTW_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARHX739YBW_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARHX877BLQ_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARHY177LY9_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARHZ255RA6_T1w",
+            "score": -1.5
+        },
+        {
+            "name": "sub-NDARHZ439EBY_T1w",
+            "score": 1.6666666666666667
+        },
+        {
+            "name": "sub-NDARHZ923PAH_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARJA157YB3_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARJC514CE0_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARJF755DT9_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARJG300HWH_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARJG488XHT_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARJG821GH3_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARJH925ZCD_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARJJ356DAL_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARJJ413MNH_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARJK085PZL_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARJK910PDK_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARJL303FKR_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARJM239GN4_T1w",
+            "score": 0.5
+        },
+        {
+            "name": "sub-NDARJM708VGE_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARJM828PAL_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARJP133YL3_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARJP444DZM_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARJP489HCE_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARJR525HTX_T1w",
+            "score": 4.25
+        },
+        {
+            "name": "sub-NDARJR687LGX_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARJT517YHZ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARJT523MV7_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARJT606WGQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARJT730WP0_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARJV268PNW_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARJV377HG4_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARJV894XP2_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARJW315BUA_T1w",
+            "score": 0.5
+        },
+        {
+            "name": "sub-NDARJW685KBA_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARJX421FWR_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARJY033DKZ_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARJY141RFE_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARJZ089HVP_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARJZ217VJ6_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARJZ274PRQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARJZ549HU8_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARJZ679KXJ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARKA085YRG_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARKA429EPF_T1w",
+            "score": 3.6666666666666665
+        },
+        {
+            "name": "sub-NDARKA627LF8_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARKB547TCK_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARKC403LRW_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARKC452YVR_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARKC880ZHY_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARKD134TCX_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARKF615JNZ_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARKF909WM5_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARKG785VAJ_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARKG859AGN_T1w",
+            "score": 4.666666666666667
+        },
+        {
+            "name": "sub-NDARKH421UB1_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARKH741PL8_T1w",
+            "score": 3.6666666666666665
+        },
+        {
+            "name": "sub-NDARKH837TB2_T1w",
+            "score": -2.5
+        },
+        {
+            "name": "sub-NDARKK564DB0_T1w",
+            "score": -0.75
+        },
+        {
+            "name": "sub-NDARKL327VRH_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARKM497VKX_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARKM551DA4_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARKM635UY0_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARKR010EN7_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARKR195PL9_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARKU616UBL_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARKV482FU9_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARKV965WLU_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARKW531ACR_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARKW738AMY_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARKW999WZD_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARKX346VTV_T1w",
+            "score": 1.5
+        },
+        {
+            "name": "sub-NDARKX761BH9_T1w",
+            "score": 1.5
+        },
+        {
+            "name": "sub-NDARKY667THK_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARLA516PH1_T1w",
+            "score": 3.6666666666666665
+        },
+        {
+            "name": "sub-NDARLB017MBJ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARLB629BJ1_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARLD016VCA_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARLD990NH4_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARLE554GYT_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARLF283KJX_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARLF480DMW_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARLG942AZ1_T1w",
+            "score": 3.6666666666666665
+        },
+        {
+            "name": "sub-NDARLH979WFX_T1w",
+            "score": -0.5
+        },
+        {
+            "name": "sub-NDARLJ356HAQ_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARLJ654TZ0_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARLJ886BFK_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARLL389TUF_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARLL720BGU_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARLL914UW4_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARLN070VX7_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARLN778RYN_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARLP181HLA_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARLP624GFH_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARLP858RAA_T1w",
+            "score": 2.5
+        },
+        {
+            "name": "sub-NDARLR030EW6_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARLU606ZDD_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARLV387GP4_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARLX836EHJ_T1w",
+            "score": 2.5
+        },
+        {
+            "name": "sub-NDARLY585ZVN_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARLZ104NDT_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARLZ228PCB_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARMA875ARE_T1w",
+            "score": 4.333333333333333
+        },
+        {
+            "name": "sub-NDARMC412BCK_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMC759CX3_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARMD575AXD_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARMD700NUE_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARME656MTN_T1w",
+            "score": 2.3333333333333335
+        },
+        {
+            "name": "sub-NDARME930DE7_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARMF116AFR_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARMG196KV4_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARMH249AWF_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARMH763YZD_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARMJ219AKU_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARMJ334ZK3_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARMJ699RJN_T1w",
+            "score": 2.5
+        },
+        {
+            "name": "sub-NDARMJ849UKD_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARML142BEK_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARML148UCE_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARML406ZB8_T1w",
+            "score": -2.6666666666666665
+        },
+        {
+            "name": "sub-NDARMM005DLK_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARMM137PT6_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARMM326JCB_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARMM386PL6_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMM782KJK_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMM878ZR1_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARMM905VYR_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARMM951YEH_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARMM990URX_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMN450PEH_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARMP745EAC_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARMR242UKQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMR277TT7_T1w",
+            "score": 0.5
+        },
+        {
+            "name": "sub-NDARMT064WBB_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMT732GKM_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARMT784NED_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARMU053YEU_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARMU269TFY_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMU488APK_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARMV247HRA_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARMV410ZFY_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARMV718DYL_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARMW178UDD_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMW252AJW_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARMX032AU3_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARMY064EAD_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMY533CYM_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARMY967HNA_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARMZ200GVD_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARMZ687XRR_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARMZ908DUR_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARNB440UE4_T1w",
+            "score": 4.333333333333333
+        },
+        {
+            "name": "sub-NDARNB824ARJ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARNC561KDP_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARND348HB3_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARNE511XHU_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARNE758RD6_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARNF954MK3_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARNF994TPA_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARNG309KZ8_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNG689AAP_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARNH342XLK_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARNJ687DMC_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARNJ715JPV_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNJ894VH2_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNK329VC3_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNL134VF0_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARNL599TMZ_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARNL807DKC_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNM624PDC_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARNN218UGY_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARNR709MMQ_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARNR773DL4_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNT042GRA_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNT541VT2_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNT572CMD_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARNT939YMG_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNU137XR4_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARNU249EDF_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARNU497GTX_T1w",
+            "score": -2.3333333333333335
+        },
+        {
+            "name": "sub-NDARNV332JF2_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNV399BV4_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARNW218ZBU_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNX218UY5_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARNZ615UEU_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARPC817XZ5_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARPD977VX2_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARPE056ACA_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARPE404CMV_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARPE596LZL_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARPF118ABV_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARPF179GNV_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARPG072ZZ7_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARPH844KP2_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARPL306LC6_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARPL721WTD_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARPM105MKA_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARPP337KUQ_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARPP703NX4_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARPR768KT4_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARPT910NEE_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARPU897CM5_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARPV145KGL_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARPV249ZRF_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARPW313LAJ_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARPW482TVE_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARPW577WJ7_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARPW635LN4_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARPX155RF3_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARPX219TW0_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARPX244EHJ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARPZ621ZLE_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARRA537FWW_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARRA717GYV_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARRA733VWX_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARRA767WB7_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRB942UWU_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRC190NKB_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARRD326KB9_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARRD720XZK_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRE333EKT_T1w",
+            "score": 3.3333333333333335
+        },
+        {
+            "name": "sub-NDARRF897HB5_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARRG199RU4_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARRH725XYA_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARRJ763GUF_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARRJ989YPA_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRK213WCF_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRK457MBX_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRK882CLT_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARRL218DJ5_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARRL660CME_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARRL685WB7_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARRN619WHY_T1w",
+            "score": 1.6666666666666667
+        },
+        {
+            "name": "sub-NDARRP163YRC_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRP592GHK_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARRP818DWL_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRT038VG1_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARRU600XWW_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRU720LG4_T1w",
+            "score": -3.6666666666666665
+        },
+        {
+            "name": "sub-NDARRV480PU1_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARRW100AU0_T1w",
+            "score": 4.666666666666667
+        },
+        {
+            "name": "sub-NDARRW940BL6_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARRY280KNW_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRY715CY4_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARRZ199KNG_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARRZ653HKY_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARTA808DEQ_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARTE785ZMJ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARTF133LLM_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARTF833WXB_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARTH473LF8_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARTH610GMK_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARTJ032FJ2_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARTK185PBH_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARTK657DV6_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARTK933KL9_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARTL336THT_T1w",
+            "score": -1.5
+        },
+        {
+            "name": "sub-NDARTM946WJ7_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARTN158LRF_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARTN487KDK_T1w",
+            "score": -4.111111111111112
+        },
+        {
+            "name": "sub-NDARTP313AGH_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARTP795WU2_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARTR365NCY_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARTR840XP1_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARTT194LTU_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARTT242GNN_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARTT759PC5_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARTU768MY1_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARTU777GVV_T1w",
+            "score": 3.6666666666666665
+        },
+        {
+            "name": "sub-NDARTW850GHU_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARTW855BPJ_T1w",
+            "score": -0.5
+        },
+        {
+            "name": "sub-NDARTW889JN9_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARTX012JHM_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARTX659HAF_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARTX795AKR_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARTY625VHZ_T1w",
+            "score": -0.5
+        },
+        {
+            "name": "sub-NDARUA421HT8_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARUC851WHU_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARUD764NFJ_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARUE533XNH_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARUF069EHR_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARUF389TXE_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARUF935UL3_T1w",
+            "score": -4.833333333333333
+        },
+        {
+            "name": "sub-NDARUG323DM3_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARUG507AZX_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARUJ646APQ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARUL224GN6_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARUL341DD2_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARUL456EER_T1w",
+            "score": -4.0
+        },
+        {
+            "name": "sub-NDARUL881JR9_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARUM569EV1_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARUM991EE8_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARUN300FG1_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARUP249AMD_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARUR987CDM_T1w",
+            "score": -3.5
+        },
+        {
+            "name": "sub-NDARUT018UYN_T1w",
+            "score": -3.5
+        },
+        {
+            "name": "sub-NDARUT792WX7_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARUV263YB5_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARUV753MY9_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARUW816MP3_T1w",
+            "score": 1.5
+        },
+        {
+            "name": "sub-NDARUW904FMQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARUX216VHK_T1w",
+            "score": 1.5
+        },
+        {
+            "name": "sub-NDARUX886JLM_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARUY876VL1_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARUZ206DRV_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARVB04TJA_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARVB297WUM_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARVB607WW4_T1w",
+            "score": 3.6666666666666665
+        },
+        {
+            "name": "sub-NDARVB811FVD_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARVC246ZY8_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARVD635FX8_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARVD685RRJ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARVE724GEF_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARVG148WHV_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARVG436WGG_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARVG461LA2_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARVG971CHH_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARVH070WH6_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARVJ504DAA_T1w",
+            "score": 4.333333333333333
+        },
+        {
+            "name": "sub-NDARVL555VVA_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARVM685MER_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARVN646NZP_T1w",
+            "score": 4.333333333333333
+        },
+        {
+            "name": "sub-NDARVP135ZGE_T1w",
+            "score": -1.75
+        },
+        {
+            "name": "sub-NDARVP281CJ4_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARVT231LJG_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARVT488RXJ_T1w",
+            "score": 3.75
+        },
+        {
+            "name": "sub-NDARVU683CTN_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARVV174JHW_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARVV199XK2_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARVX162AZU_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARVX292KKC_T1w",
+            "score": 1.5
+        },
+        {
+            "name": "sub-NDARVY007TEJ_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARVY366HWJ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARWA351ZE2_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARWA513WM2_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARWA622HHZ_T1w",
+            "score": -0.5
+        },
+        {
+            "name": "sub-NDARWB685NUG_T1w",
+            "score": 2.5
+        },
+        {
+            "name": "sub-NDARWB943YY9_T1w",
+            "score": 1.5
+        },
+        {
+            "name": "sub-NDARWC737UJ0_T1w",
+            "score": -0.8333333333333334
+        },
+        {
+            "name": "sub-NDARWE145GN9_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARWF090RZ7_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARWF122UUJ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARWG831JJ8_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARWJ019VGU_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARWJ087HKJ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARWJ217HDQ_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARWK065NJ9_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARWM319UU2_T1w",
+            "score": 4.75
+        },
+        {
+            "name": "sub-NDARWM527PRT_T1w",
+            "score": -4.5
+        },
+        {
+            "name": "sub-NDARWP237VB3_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARWP595TE6_T1w",
+            "score": -0.25
+        },
+        {
+            "name": "sub-NDARWP634RZL_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARWP954GPJ_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARWR678HLF_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARWR732NZE_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARWT389BYY_T1w",
+            "score": -4.25
+        },
+        {
+            "name": "sub-NDARWT449PUN_T1w",
+            "score": -1.5
+        },
+        {
+            "name": "sub-NDARWV155PRG_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARWV405ZW0_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARWV449GEM_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARWV470ATB_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARWV677EFC_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARWW003WWW_T1w",
+            "score": -3.5714285714285716
+        },
+        {
+            "name": "sub-NDARWW005GCU_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARWW901MTC_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARWX033HYK_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARWX338NDL_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARWX380JJK_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARWZ283CWB_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARWZ709DLY_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARXB704HFD_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARXC418YG7_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARXC878WB2_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARXD388TTE_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARXD502MC1_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARXE684LUY_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARXF203DCD_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARXF441RHQ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARXF623GEL_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARXF956ZU6_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARXG571WPL_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARXG736VP9_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARXH017ZLE_T1w",
+            "score": 0.5
+        },
+        {
+            "name": "sub-NDARXH597ML1_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARXJ468UGL_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARXJ696AMX_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARXJ799NEB_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARXK076XU8_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARXK164TNN_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARXK462WRZ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARXL588FFJ_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARXN047RUT_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARXN425ZJB_T1w",
+            "score": -3.25
+        },
+        {
+            "name": "sub-NDARXR637JER_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARXR965TFK_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARXT792GY8_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARXU018RGY_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARXU253JHC_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARXU437UFZ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARXU679ZE8_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARXU715EGL_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARXV445NYZ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARXX895FNJ_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARXY162ERA_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARXY240WJC_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARXY337ZH9_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARXY745NXJ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARXY938XY7_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARXZ685TU4_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARYA503XVQ_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARYA556KP8_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARYB563VRT_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARYD195BDH_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARYD546HCB_T1w",
+            "score": 2.5
+        },
+        {
+            "name": "sub-NDARYF135ZHU_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARYG546ZFF_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARYG874EKA_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARYH110YV9_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARYH480GTD_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARYH996DA9_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARYJ536MCR_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARYK942YHY_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARYL124VM6_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARYL272HDW_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARYL438DCK_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARYL758JGG_T1w",
+            "score": -2.0
+        },
+        {
+            "name": "sub-NDARYM257RR6_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARYM695TZY_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARYM832PX3_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARYN484LLR_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARYP495KFK_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARYR150UDP_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARYR829KD8_T1w",
+            "score": 4.25
+        },
+        {
+            "name": "sub-NDARYR994ELB_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARYU290HJ3_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARYU323ZDJ_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARYU620RH9_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARYW903VN8_T1w",
+            "score": -3.0
+        },
+        {
+            "name": "sub-NDARYX530MZU_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARYY218AGA_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARYY218LU2_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARYZ408VWW_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARYZ770NA1_T1w",
+            "score": 1.0
+        },
+        {
+            "name": "sub-NDARYZ909VND_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARZA694WHF_T1w",
+            "score": 0.5
+        },
+        {
+            "name": "sub-NDARZB377WZJ_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARZC499NVX_T1w",
+            "score": 2.0
+        },
+        {
+            "name": "sub-NDARZD099KWW_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARZD991YLG_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARZE542ZVH_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARZE850WXD_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARZF288FB7_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARZF949WTW_T1w",
+            "score": -0.6666666666666666
+        },
+        {
+            "name": "sub-NDARZG263HRK_T1w",
+            "score": 3.0
+        },
+        {
+            "name": "sub-NDARZG623FYX_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARZH451LRZ_T1w",
+            "score": 4.5
+        },
+        {
+            "name": "sub-NDARZH517ZVK_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARZH629NVF_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARZJ016GL0_T1w",
+            "score": -1.5
+        },
+        {
+            "name": "sub-NDARZJ414CAA_T1w",
+            "score": 3.5
+        },
+        {
+            "name": "sub-NDARZJ460RWZ_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARZJ603JM0_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARZK732FZ0_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARZL724HAX_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARZL855WVA_T1w",
+            "score": 0.0
+        },
+        {
+            "name": "sub-NDARZN277NR6_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARZP564MHU_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARZP630WYL_T1w",
+            "score": 4.0
+        },
+        {
+            "name": "sub-NDARZR567HWG_T1w",
+            "score": -1.0
+        },
+        {
+            "name": "sub-NDARZT772PU4_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARZV766YXP_T1w",
+            "score": 5.0
+        },
+        {
+            "name": "sub-NDARZW013RUH_T1w",
+            "score": -5.0
+        },
+        {
+            "name": "sub-NDARZY668NMV_T1w",
+            "score": 3.0
+        }
+    ],
+    "n_ratings_per_image": [
+        {
+            "name": "sub-NDARAA075AMK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAA536PTU_T1w",
+            "score": 4
+        },
+        {
+            "name": "sub-NDARAA948VFH_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAC853DTE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAC904DMU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAD481FXF_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAE012DGA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAE199TDD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAG340ERT_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAH948UF0_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAJ366ZFA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAK187ZLP_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAM277WZT_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAM675UR8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAN814UPR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAP176AD1_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAP782TVC_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAR025WX4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAT100AEQ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAT299YRR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARAT581NDH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAV610EY3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAV747WVL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAV894XWD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAV945MCQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAW179AYF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARAY238DFL_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBA507GCT_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBA521RA8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBA680RFY_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBB854DRN_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARBC580HR5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBC734UVY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBE123PWH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBE641DGZ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBF176LPM_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBF805EHN_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBG574KF4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBG702FED_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARBJ159HXB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBK082PDD_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBK669XJQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBM173BJG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBM213BEA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBM839WR5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBN100LCD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBR740NKV_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBU112XZE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBU607ZZ3_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARBV364MBC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBV680AA8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBX121UM9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBX400RTC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBX974XDR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARBZ216FW8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCA153NKE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCA186WGH_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCA789EE0_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCB959FY4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCD401HGZ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCE353XKH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCE721YB5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCG073GZ6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCG984YXZ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCH881EFG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCJ007GF8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCJ170CT9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCJ363KLE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCJ475WJP_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCK647MU6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCL016NHB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCL080RHP_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARCL105LUE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCL590LPD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCM135DVC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCM302VJ1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCN669XPR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCP360AFD_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCR499NE4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCT933HF2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCU118LMX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCU417HRA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCU865PBV_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCV412MDW_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCV944JA6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCW071AU5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCW094JCG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCW419GBD_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARCW611MK5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCW933FD5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCW963FP9_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARCX053GU5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCZ770BRG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARCZ947WU5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDA695XTL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDB146NWY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDB804YHE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDC360DGB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDC704GKW_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDD531EP2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDF373ZDW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDH270YR5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDH328DR9_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDJ825GBP_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDK983BDA_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARDL511UND_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDM425CG2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDN702GXX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDN770HY6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDP786HE6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDR067YMC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDR658DRA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDT528ZZJ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDT800YVF_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDU799BZF_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDU986RBM_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDW416KWZ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDX469TC1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDX561MRY_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDX770PJK_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARDY150ZP9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDZ010EDH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDZ058NZN_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARDZ946KVL_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREB290UCN_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREC182WW2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREC964CRA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARED047DTH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARED632KNG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREE196FEG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREF057VX5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREF164ZUJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREF893ZM8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREG561ML5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREH074NG8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREK375DKR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREK544ENR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREK801BPB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREK918EC2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREK947FYP_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREL063PMX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREM018TJQ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREM141CKP_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREM731BYM_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREN519BLJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARET550NXC_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARET653TAM_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARET949LMU_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREU211JMY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREV527ZRF_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREV601CE7_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREX091KUR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREY778CR9_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDAREY962BM7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDAREZ098ZPE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARFA464HJQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFA860RPD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFB107PVH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFB500HHN_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFB908HVX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFD822TY5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARFE163HVN_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARFH674DWX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFK477WX9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFK610GY5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFL411AT1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFM080VAF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFN452VPC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFR108JNB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARFR109LKT_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFT834NT1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFU789PRX_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARFW130NGG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFW292PBD_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARFW444PN1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFW972KFQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFY009MNL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFY612EMR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARFZ296UNG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGA056TMW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGA967MGC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGB040MGR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGB441VVD_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGD507TDZ_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARGE366WNC_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGE536BGD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGE946RCB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGG205WVN_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGH407KVG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGH775KF5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGJ395FKP_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGK736HF4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGL800LDW_T1w",
+            "score": 4
+        },
+        {
+            "name": "sub-NDARGL834CMQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGL963HU4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGM498YFL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGM540EV8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGM610LF0_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGR661YZG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGT022BEW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGT267UZR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGT551AFK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGT682ZWN_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGU100JH4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGU485JJA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGU667MCK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGU729WUR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGV781AMW_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGW404GJL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGY054ENV_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGY148EVU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARGY622NG6_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARGZ038DRL_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHA387FPM_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHB764VZ2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHB781DD8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHB993EV0_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARHC737MHK_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHD059PEQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHD507TEF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHE236YLB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHF023VG3_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHF351AA6_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARHF904CWB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHG152GZC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHJ034LDM_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHJ126UW2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHJ523XGB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHJ945PV0_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHJ946UPH_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHK598YJC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHL164JHH_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHL238VL2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHL358LGQ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHM273AXL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHM304AXP_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHM421JUP_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHM615PJH_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHN158DC6_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHN749RW4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHP176DPE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHP558MGA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHP656DLC_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHP924ZHW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHR753ZKU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHR944BBY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHT218GFA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHU391FD7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHV527DNK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHW216PER_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHW718DTW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHX739YBW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHX877BLQ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARHY177LY9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHZ255RA6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARHZ439EBY_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARHZ923PAH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJA157YB3_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJC514CE0_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJF755DT9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJG300HWH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJG488XHT_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJG821GH3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJH925ZCD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJJ356DAL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJJ413MNH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJK085PZL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJK910PDK_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJL303FKR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJM239GN4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJM708VGE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJM828PAL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJP133YL3_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJP444DZM_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJP489HCE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJR525HTX_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJR687LGX_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJT517YHZ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJT523MV7_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJT606WGQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJT730WP0_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJV268PNW_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJV377HG4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJV894XP2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJW315BUA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJW685KBA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJX421FWR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJY033DKZ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJY141RFE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJZ089HVP_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJZ217VJ6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJZ274PRQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARJZ549HU8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARJZ679KXJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKA085YRG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKA429EPF_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARKA627LF8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKB547TCK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKC403LRW_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKC452YVR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKC880ZHY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKD134TCX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKF615JNZ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKF909WM5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKG785VAJ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKG859AGN_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARKH421UB1_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKH741PL8_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARKH837TB2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKK564DB0_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKL327VRH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKM497VKX_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKM551DA4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKM635UY0_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKR010EN7_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKR195PL9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKU616UBL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKV482FU9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKV965WLU_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKW531ACR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKW738AMY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARKW999WZD_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKX346VTV_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKX761BH9_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARKY667THK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLA516PH1_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARLB017MBJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLB629BJ1_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLD016VCA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLD990NH4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLE554GYT_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLF283KJX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLF480DMW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLG942AZ1_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARLH979WFX_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLJ356HAQ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLJ654TZ0_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLJ886BFK_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLL389TUF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLL720BGU_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLL914UW4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLN070VX7_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLN778RYN_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLP181HLA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLP624GFH_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLP858RAA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLR030EW6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLU606ZDD_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLV387GP4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLX836EHJ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLY585ZVN_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARLZ104NDT_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARLZ228PCB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMA875ARE_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARMC412BCK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMC759CX3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMD575AXD_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMD700NUE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARME656MTN_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARME930DE7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMF116AFR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMG196KV4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMH249AWF_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMH763YZD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMJ219AKU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMJ334ZK3_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMJ699RJN_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMJ849UKD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARML142BEK_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARML148UCE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARML406ZB8_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARMM005DLK_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARMM137PT6_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMM326JCB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMM386PL6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMM782KJK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMM878ZR1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMM905VYR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMM951YEH_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMM990URX_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMN450PEH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMP745EAC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMR242UKQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMR277TT7_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMT064WBB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMT732GKM_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMT784NED_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMU053YEU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMU269TFY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMU488APK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMV247HRA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMV410ZFY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMV718DYL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMW178UDD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMW252AJW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMX032AU3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMY064EAD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMY533CYM_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMY967HNA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMZ200GVD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARMZ687XRR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARMZ908DUR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNB440UE4_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARNB824ARJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNC561KDP_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARND348HB3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNE511XHU_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNE758RD6_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNF954MK3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNF994TPA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNG309KZ8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNG689AAP_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNH342XLK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNJ687DMC_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNJ715JPV_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNJ894VH2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNK329VC3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNL134VF0_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNL599TMZ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNL807DKC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNM624PDC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNN218UGY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNR709MMQ_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARNR773DL4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNT042GRA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNT541VT2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNT572CMD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNT939YMG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNU137XR4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNU249EDF_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNU497GTX_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARNV332JF2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNV399BV4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARNW218ZBU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNX218UY5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARNZ615UEU_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARPC817XZ5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARPD977VX2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARPE056ACA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPE404CMV_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARPE596LZL_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARPF118ABV_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPF179GNV_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPG072ZZ7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPH844KP2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPL306LC6_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARPL721WTD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPM105MKA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPP337KUQ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARPP703NX4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPR768KT4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPT910NEE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPU897CM5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPV145KGL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPV249ZRF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPW313LAJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPW482TVE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPW577WJ7_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARPW635LN4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPX155RF3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPX219TW0_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPX244EHJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARPZ621ZLE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRA537FWW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRA717GYV_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRA733VWX_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRA767WB7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRB942UWU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRC190NKB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRD326KB9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRD720XZK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRE333EKT_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRF897HB5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRG199RU4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRH725XYA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRJ763GUF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRJ989YPA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRK213WCF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRK457MBX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRK882CLT_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRL218DJ5_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRL660CME_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRL685WB7_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRN619WHY_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARRP163YRC_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRP592GHK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRP818DWL_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRT038VG1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRU600XWW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRU720LG4_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARRV480PU1_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRW100AU0_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARRW940BL6_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRY280KNW_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRY715CY4_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARRZ199KNG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARRZ653HKY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTA808DEQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTE785ZMJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTF133LLM_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARTF833WXB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTH473LF8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARTH610GMK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTJ032FJ2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTK185PBH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTK657DV6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTK933KL9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTL336THT_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARTM946WJ7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTN158LRF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTN487KDK_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARTP313AGH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTP795WU2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARTR365NCY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTR840XP1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTT194LTU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTT242GNN_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTT759PC5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTU768MY1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTU777GVV_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTW850GHU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTW855BPJ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARTW889JN9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTX012JHM_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTX659HAF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTX795AKR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARTY625VHZ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUA421HT8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUC851WHU_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUD764NFJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUE533XNH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUF069EHR_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUF389TXE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUF935UL3_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARUG323DM3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUG507AZX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUJ646APQ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUL224GN6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUL341DD2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUL456EER_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUL881JR9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUM569EV1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUM991EE8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUN300FG1_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUP249AMD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUR987CDM_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUT018UYN_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUT792WX7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUV263YB5_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUV753MY9_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUW816MP3_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUW904FMQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARUX216VHK_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUX886JLM_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUY876VL1_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARUZ206DRV_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVB04TJA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVB297WUM_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVB607WW4_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARVB811FVD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVC246ZY8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVD635FX8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVD685RRJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVE724GEF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVG148WHV_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVG436WGG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVG461LA2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVG971CHH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVH070WH6_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVJ504DAA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVL555VVA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVM685MER_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVN646NZP_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARVP135ZGE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVP281CJ4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVT231LJG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVT488RXJ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVU683CTN_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVV174JHW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVV199XK2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVX162AZU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARVX292KKC_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVY007TEJ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARVY366HWJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWA351ZE2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWA513WM2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWA622HHZ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWB685NUG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWB943YY9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWC737UJ0_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWE145GN9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWF090RZ7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWF122UUJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWG831JJ8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWJ019VGU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWJ087HKJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWJ217HDQ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWK065NJ9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWM319UU2_T1w",
+            "score": 4
+        },
+        {
+            "name": "sub-NDARWM527PRT_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWP237VB3_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWP595TE6_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWP634RZL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWP954GPJ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWR678HLF_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWR732NZE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWT389BYY_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWT449PUN_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWV155PRG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWV405ZW0_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWV449GEM_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWV470ATB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWV677EFC_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWW003WWW_T1w",
+            "score": 7
+        },
+        {
+            "name": "sub-NDARWW005GCU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWW901MTC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWX033HYK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWX338NDL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWX380JJK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARWZ283CWB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARWZ709DLY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXB704HFD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXC418YG7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXC878WB2_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXD388TTE_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXD502MC1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXE684LUY_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXF203DCD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXF441RHQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXF623GEL_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARXF956ZU6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXG571WPL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXG736VP9_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXH017ZLE_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXH597ML1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXJ468UGL_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXJ696AMX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXJ799NEB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXK076XU8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXK164TNN_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXK462WRZ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXL588FFJ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXN047RUT_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXN425ZJB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXR637JER_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXR965TFK_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXT792GY8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXU018RGY_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXU253JHC_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXU437UFZ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXU679ZE8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXU715EGL_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXV445NYZ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARXX895FNJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXY162ERA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXY240WJC_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXY337ZH9_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARXY745NXJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXY938XY7_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARXZ685TU4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYA503XVQ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYA556KP8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYB563VRT_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYD195BDH_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYD546HCB_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYF135ZHU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYG546ZFF_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYG874EKA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYH110YV9_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYH480GTD_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYH996DA9_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYJ536MCR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYK942YHY_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYL124VM6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYL272HDW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYL438DCK_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYL758JGG_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYM257RR6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYM695TZY_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYM832PX3_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYN484LLR_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYP495KFK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYR150UDP_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYR829KD8_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYR994ELB_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYU290HJ3_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYU323ZDJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYU620RH9_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYW903VN8_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYX530MZU_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARYY218AGA_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYY218LU2_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYZ408VWW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYZ770NA1_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARYZ909VND_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZA694WHF_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZB377WZJ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZC499NVX_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZD099KWW_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZD991YLG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZE542ZVH_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZE850WXD_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZF288FB7_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZF949WTW_T1w",
+            "score": 3
+        },
+        {
+            "name": "sub-NDARZG263HRK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZG623FYX_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZH451LRZ_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZH517ZVK_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZH629NVF_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZJ016GL0_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZJ414CAA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZJ460RWZ_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZJ603JM0_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZK732FZ0_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZL724HAX_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZL855WVA_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZN277NR6_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZP564MHU_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZP630WYL_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZR567HWG_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZT772PU4_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZV766YXP_T1w",
+            "score": 1
+        },
+        {
+            "name": "sub-NDARZW013RUH_T1w",
+            "score": 2
+        },
+        {
+            "name": "sub-NDARZY668NMV_T1w",
+            "score": 1
+        }
+    ]
+}

@@ -1154,7 +1154,6 @@ export default {
       const ax = this.axes.scatter;
       const minD = d3.min(ax.data, ax.ax.xValue);
       const maxD = d3.max(ax.data, ax.ax.xValue);
-
       const N = 100;
       const Xstar = linspace(minD, maxD, 50);
       let Yboot = [];

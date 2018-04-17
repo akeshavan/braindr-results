@@ -61,6 +61,11 @@
 
                     Volume:
                 </h5>
+                <b-button variant="outline-info" size="sm" @click="doConfInt">
+                  <span v-if="confStatus">Running Bootstrap</span>
+                  <span v-else>Calculate CI</span>
+
+                </b-button>
               </div>
               <div class="chart-stage" ref="scatter">
                 <svg id="scatterArea"></svg>
@@ -292,6 +297,10 @@ const clickColor = highlightOnColor; // '#28a745'; // success
 // const selectedIndices = [];
 // window.selectedIndices = selectedIndices;
 
+const linspace = function (start, stop, nsteps) {
+  const delta = (stop - start) / (nsteps - 1);
+  return d3.range(start, stop + delta, delta).slice(0, nsteps);
+};
 
 export default {
   name: 'HelloWorld',
@@ -335,6 +344,10 @@ export default {
       clickPointIdx: 0,
       selectedBarIndices: [],
       selectedBarMetric: null,
+      confData: [],
+      confData0: [],
+      confData1: [],
+      confStatus: 0,
       axes: {
         scatter: { data: dataset, ax: null, xName: 'age', yName: 'gray_matter', ref: 'scatter' },
         braindr: { data: null,
@@ -909,10 +922,7 @@ export default {
 
       const modelS = this.modelS;
       const self = this;
-      const linspace = function (start, stop, nsteps) {
-        const delta = (stop - start) / (nsteps - 1);
-        return d3.range(start, stop + delta, delta).slice(0, nsteps);
-      };
+
       const minD = d3.min(ax.data, ax.ax.xValue);
       const maxD = d3.max(ax.data, ax.ax.xValue);
 
@@ -926,15 +936,6 @@ export default {
         }
         return { x, y };
       });
-      const confData = _.map(X, (x) => {
-        let y0 = model.t.interval95[0][0] + (model.t.interval95[1][0] * x);
-        let y1 = model.t.interval95[0][1] + (model.t.interval95[1][1] * x);
-        if (self.selectedPolyType) {
-          y0 += model.t.interval95[2][0] * (x ** 2);
-          y1 += model.t.interval95[2][1] * (x ** 2);
-        }
-        return { x, y0, y1 };
-      });
 
       // group0's lines & confs
       const lineData0 = _.map(X, (x) => {
@@ -944,15 +945,6 @@ export default {
         }
         return { x, y };
       });
-      const confData0 = _.map(X, (x) => {
-        let y0 = modelS[0].t.interval95[0][0] + (modelS[0].t.interval95[1][0] * x);
-        let y1 = modelS[0].t.interval95[0][1] + (modelS[0].t.interval95[1][1] * x);
-        if (self.selectedPolyType) {
-          y0 += modelS[0].t.interval95[2][0] * (x ** 2);
-          y1 += modelS[0].t.interval95[2][1] * (x ** 2);
-        }
-        return { x, y0, y1 };
-      });
 
       // group1's lines & confs
       const lineData1 = _.map(X, (x) => {
@@ -961,15 +953,6 @@ export default {
           y += modelS[1].coef[2] * (x ** 2);
         }
         return { x, y };
-      });
-      const confData1 = _.map(X, (x) => {
-        let y0 = modelS[1].t.interval95[0][0] + (modelS[1].t.interval95[1][0] * x);
-        let y1 = modelS[1].t.interval95[0][1] + (modelS[1].t.interval95[1][1] * x);
-        if (self.selectedPolyType) {
-          y0 += modelS[1].t.interval95[2][0] * (x ** 2);
-          y1 += modelS[1].t.interval95[2][1] * (x ** 2);
-        }
-        return { x, y0, y1 };
       });
 
       const line = d3.line()
@@ -1037,25 +1020,25 @@ export default {
         .datum(lineData)
         .attr('d', line);
 
-      /* ax.ax.svg.select('.fitconf')
-        .datum(confData)
-        .attr('d', confidenceArea); */
+      ax.ax.svg.select('.fitconf')
+        .datum(this.confData)
+        .attr('d', confidenceArea);
 
       ax.ax.svg.select('.fit0')
         .datum(lineData0)
         .attr('d', line);
 
-      /* ax.ax.svg.select('.fitconf0')
-        .datum(confData0)
-        .attr('d', confidenceArea); */
+      ax.ax.svg.select('.fitconf0')
+        .datum(this.confData0)
+        .attr('d', confidenceArea);
 
       ax.ax.svg.select('.fit1')
         .datum(lineData1)
         .attr('d', line);
 
-      /* ax.ax.svg.select('.fitconf1')
-        .datum(confData1)
-        .attr('d', confidenceArea); */
+      ax.ax.svg.select('.fitconf1')
+        .datum(this.confData1)
+        .attr('d', confidenceArea);
 
       // now just hide the ones we don't want to see.
 
@@ -1134,9 +1117,69 @@ export default {
       return this.data[i].metrics.Sex ? line1Color : line0Color;
     },
     runModel() {
+      this.confData = [];
+      this.confData0 = [];
+      this.confData1 = [];
       this.model = jStat.models.ols(this.pointArrays.y, this.pointArrays.X);
       this.modelS[0] = jStat.models.ols(this.pointArrays.y0, this.pointArrays.X0);
       this.modelS[1] = jStat.models.ols(this.pointArrays.y1, this.pointArrays.X1);
+    },
+    doConfInt() {
+      this.confStatus = 1;
+      this.$forceUpdate();
+      this.$nextTick().then(() => {
+        setTimeout(() => {
+          this.doConfIntReal();
+          this.confStatus = 0;
+        }, 10); // no idea why i need to do this..
+      });
+    },
+    doConfIntReal() {
+      this.confData = this.runBootstrap(this.pointArrays.X, this.pointArrays.y);
+      this.confData0 = this.runBootstrap(this.pointArrays.X0, this.pointArrays.y0);
+      this.confData1 = this.runBootstrap(this.pointArrays.X1, this.pointArrays.y1);
+      this.confStatus = 0;
+      this.lineGraph();
+    },
+    getBootstrapSamples(X, y) {
+      const bs = { X: [], y: [] };
+      for (let i = 0; i < X.length; i += 1) {
+        const sample = Math.floor(Math.random() * X.length);
+        bs.X.push(X[sample]);
+        bs.y.push(y[sample]);
+      }
+      return bs;
+    },
+    runBootstrap(X, y) {
+      const ax = this.axes.scatter;
+      const minD = d3.min(ax.data, ax.ax.xValue);
+      const maxD = d3.max(ax.data, ax.ax.xValue);
+
+      const N = 100;
+      const Xstar = linspace(minD, maxD, 50);
+      let Yboot = [];
+      for (let i = 0; i < N; i += 1) {
+        const bootstrapSamples = this.getBootstrapSamples(X, y);
+        const bmodel = jStat.models.ols(bootstrapSamples.y, bootstrapSamples.X);
+        // console.log(bmodel);
+        const yPred = _.map(Xstar, (x) => {
+          let yStar = bmodel.coef[0] + (bmodel.coef[1] * x);
+          if (this.selectedPolyType) {
+            yStar += bmodel.coef[2] * (x ** 2);
+          }
+          return { x, yStar };
+        });
+        Yboot = Yboot.concat(yPred);
+      }
+      const byX = _.groupBy(Yboot, 'x');
+      const yInt = [];
+      _.forOwn(byX, (value, key) => {
+        const arr = _.map(value, v => v.yStar);
+        const y1 = jStat.percentile(arr, 0.975);
+        const y0 = jStat.percentile(arr, 0.025);
+        yInt.push({ x: parseFloat(key), y0, y1 });
+      });
+      return yInt;
     },
     plotPolyType() {
       // wait for all the things to update & then rerun model and replot

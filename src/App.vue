@@ -1,23 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="md" type="dark" variant="info">
 
-  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-
-  <b-navbar-brand href="#">braindr-results</b-navbar-brand>
-
-  <!-- If the viewport is small, the navbar collapses.
-      Everything in b-collapse is what gets collapsed.
-  -->
-  <b-collapse is-nav id="nav_collapse">
-
-    <!--  Here are links to different routes  -->
-    <b-navbar-nav>
-      <b-nav-item to="/" exact>Home</b-nav-item>
-    </b-navbar-nav>
-
-  </b-collapse>
-</b-navbar>
 
 <!-- The content is in the router view -->
 <div class="router">

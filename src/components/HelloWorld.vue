@@ -364,8 +364,8 @@ export default {
           xMin: 0,
           xMax: 1,
           binSize: 0.1,
-          xName: 'x0',
-          yName: 'length',
+          xName: 'rating',
+          yName: 'count',
           mName: 'label_3D_avg' },
         mc: { data: null,
           ref: 'mc',
@@ -373,8 +373,8 @@ export default {
           xMin: -5,
           xMax: 5,
           binSize: 1,
-          xName: 'x0',
-          yName: 'length',
+          xName: 'rating',
+          yName: 'count',
           mName: 'mc_rating' },
         mriqc: { data: null,
           ref: 'mriqc',
@@ -382,8 +382,8 @@ export default {
           xMin: 0,
           xMax: 1,
           binSize: 0.1,
-          xName: 'x0',
-          yName: 'length',
+          xName: 'rating',
+          yName: 'count',
           mName: 'mriqc_pred_xg' },
       },
     };
@@ -744,9 +744,9 @@ export default {
       ax.yScale.domain([Math.min(0, d3.min(data, yValue)), d3.max(data, yValue)]);
 
       // redraw axis
-      ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text(xName);
+      ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text('rating');
 
-      ax.svg.selectAll('.y.axis').call(ax.yAxis).selectAll('.label').text(yName);
+      ax.svg.selectAll('.y.axis').call(ax.yAxis).selectAll('.label').text('count');
 
       ax.svg.selectAll('.bar')
         .data(data)

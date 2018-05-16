@@ -51,7 +51,7 @@ predicted braindr ratings for each image from the CNN that was trained on aggreg
 
 The Mindcontrol ratings (middle left) are the average Mindcontrol ratings of expert raters on the 
 <a href="https://mindcontrol-hbn.herokuapp.com">Mindcontrol application</a>. 
-A -5 is considered a "fail" with high confidence, and a 5 is considered a "pass" with high confidence
+A -5 is considered a "fail" with high confidence, and a 5 is considered a "pass" with high confidence.
 
 The MRIQC ratings (bottom left) are predicted probabilities of the trained 
 XGBoost model in classifying the gold standard images. A 0 is considered "fail" and a 1 is considered a "pass". 

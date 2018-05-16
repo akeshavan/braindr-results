@@ -88,11 +88,18 @@
                 View 3D
               </a>
             </h5>
-            <small class="mt-0 pt-0"
+            <strong class="mt-0 pt-0"
               v-if="clickPointIdx === null">
-              Click a point above to view slices
+              Click or Hover on a point above to view slices
+            </strong>
+            <small v-else>
+              <span v-if="hoverIdx !== null">
+                Viewing: {{data[hoverIdx].indi_name}}
+              </span>
+              <span v-else>
+                Viewing: {{data[clickPointIdx].indi_name}}
+              </span>
             </small>
-            <small v-else>Viewing: {{data[clickPointIdx].indi_name}}</small>
           </div>
           <div class="images mx-auto" style="min-height: 150px;"></div>
         </div>
@@ -341,7 +348,8 @@ export default {
         { text: 'Off', value: false },
         { text: 'On', value: true },
       ],
-      clickPointIdx: 0,
+      clickPointIdx: 463,
+      hoverIdx: null,
       selectedBarIndices: [],
       selectedBarMetric: null,
       confData: [],
@@ -669,10 +677,12 @@ export default {
         .selectAll('.dot')
         .on('mouseover', function setColor(d, i) {
           d3.select(this).style('fill', () => self.getHighlightOnColor(i));
+          self.hoverIdx = i;
           hoverOnCallback(d, i);
         })
         .on('mouseout', function setColor(d, i) {
           // ax.svg.selectAll('.dot').style('fill', highlightOffColor);
+          self.hoverIdx = null;
           let color = self.getHighlightOffColor(i); // highlightOffColor;
           if (self.selectedPointIndices.indexOf(i) >= 0) {
             color = self.getBrushOnColor(i);
@@ -682,6 +692,7 @@ export default {
         })
         .on('click', function setClick(d, i) {
           let color = clickColor;
+          console.log('clicked idx', i);
           let swidth = 3;
           if (!self.clickPointIdx) {
             self.clickPointIdx = i;
@@ -912,6 +923,21 @@ export default {
       if (self.clickPointIdx == null) {
         d3.select('.images').selectAll('.image')
           .data([])
+          .exit()
+          .remove('img');
+      } else {
+        const npoint = this.data[this.clickPointIdx];
+        d3.select('.images').selectAll('.image')
+          .data(npoint.braindr_images)
+          .enter()
+          .append('img')
+          .attr('class', 'image');
+
+        d3.select('.images').selectAll('.image')
+          .attr('src', d => `https://dxugxjm290185.cloudfront.net/braindr/${d}.jpg`);
+
+        d3.select('.images').selectAll('.image')
+          .data(npoint.braindr_images)
           .exit()
           .remove('img');
       }
@@ -1255,6 +1281,35 @@ export default {
 
     this.runModel();
     this.lineGraph();
+
+    // initialize the first image that shows up on the figure
+    const self = this;
+
+    // highlight the selected point
+    this.axes.scatter.ax.svg.selectAll('.dot').each(function s(d, i) {
+      const color = clickColor;
+      const swidth = 3;
+      if (i === self.clickPointIdx) {
+        d3.select(this).style('stroke', color);
+        d3.select(this).style('stroke-width', swidth);
+      }
+    });
+
+    // show the images of the selected point
+    const point = this.data[this.clickPointIdx];
+    d3.select('.images').selectAll('.image')
+      .data(point.braindr_images)
+      .enter()
+      .append('img')
+      .attr('class', 'image');
+
+    d3.select('.images').selectAll('.image')
+      .attr('src', d => `https://dxugxjm290185.cloudfront.net/braindr/${d}.jpg`);
+
+    d3.select('.images').selectAll('.image')
+      .data(point.braindr_images)
+      .exit()
+      .remove('img');
   },
 };
 </script>

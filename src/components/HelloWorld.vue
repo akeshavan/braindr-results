@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid fig9" ref="main">
+  <div class="container-fluid fig9 mt-3 pt-3" ref="main" id="fig4">
     <resize-observer @notify="handleResize" />
     <div class="row">
       <div class="col-sm-3">

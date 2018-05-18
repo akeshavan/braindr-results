@@ -364,8 +364,8 @@ export default {
           xMin: 0,
           xMax: 1,
           binSize: 0.1,
-          xName: 'rating',
-          yName: 'count',
+          xName: 'x0',
+          yName: 'length',
           mName: 'label_3D_avg' },
         mc: { data: null,
           ref: 'mc',
@@ -373,8 +373,8 @@ export default {
           xMin: -5,
           xMax: 5,
           binSize: 1,
-          xName: 'rating',
-          yName: 'count',
+          xName: 'x0',
+          yName: 'length',
           mName: 'mc_rating' },
         mriqc: { data: null,
           ref: 'mriqc',
@@ -382,8 +382,8 @@ export default {
           xMin: 0,
           xMax: 1,
           binSize: 0.1,
-          xName: 'rating',
-          yName: 'count',
+          xName: 'x0',
+          yName: 'length',
           mName: 'mriqc_pred_xg' },
       },
     };
@@ -747,7 +747,7 @@ export default {
       ax.svg.selectAll('.x.axis').call(ax.xAxis).selectAll('.label').text('rating');
 
       ax.svg.selectAll('.y.axis').call(ax.yAxis).selectAll('.label').text('count');
-
+      console.log('data is', data);
       ax.svg.selectAll('.bar')
         .data(data)
         .enter()

@@ -2,6 +2,9 @@
 
 > results from the braindr analysis
 
+* The analysis notebook is found in `notebooks/braindr-full-v0.3.ipynb` 
+* This repo also has the code for the interactive paper. Follow the build setup instructions below to run a local version
+
 ## Build Setup
 
 ``` bash
